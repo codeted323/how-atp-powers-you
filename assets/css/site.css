@@ -663,3 +663,13 @@ svg.art.zoom text {
 svg.art.zoom-s text {
   font-size: 20px;
 }
+
+/* the WebGL figure: its canvas, and an SVG overlay for marks and labels */
+.gl-wrap {
+  position: relative;
+}
+.gl-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}

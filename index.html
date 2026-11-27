@@ -401,9 +401,13 @@
 
   <p>Drag the <b>Proton flow</b> slider under the next picture to start the motor, and keep your eye on one of the three sites.</p>
 
-  <figure class="fig fig-pending" id="atp-synthase" data-figure="8.1">
-  <div class="fig-art"><svg class="art" width="980" height="160" viewBox="0 0 980 160" role="img" aria-labelledby="atp-synthase-alt"><text x="490" y="84" text-anchor="middle" class="t-small t-muted">Figure 8.1 is being drawn</text></svg></div>
+  <figure class="fig" id="atp-synthase" data-figure="8.1">
+  <div class="fig-art"><canvas class="gl" id="atp-synthase-canvas" width="980" height="560" role="img" aria-labelledby="atp-synthase-alt" tabindex="0"></canvas><svg class="art gl-fallback" width="980" height="560" viewBox="0 0 980 560" role="img" aria-labelledby="atp-synthase-alt"></svg></div>
   <p class="sr-only" id="atp-synthase-alt">A mushroom-shaped motor in a membrane. Protons pass through the ring in the membrane, turning it and a bent axle fixed to it. The axle turns inside a still head, and each of the head&#x27;s three sites in turn grabs ADP and phosphate, squeezes them into ATP, and lets the ATP go.</p>
+  <p class="fig-counter counter" id="atp-synthase-counter" aria-live="off"></p>
+  <p class="fig-caption is-live" id="atp-synthase-caption" aria-live="polite"></p>
+  <noscript><p class="fig-caption">This figure needs JavaScript. It shows: A mushroom-shaped motor in a membrane. Protons pass through the ring in the membrane, turning it and a bent axle fixed to it. The axle turns inside a still head, and each of the head&#x27;s three sites in turn grabs ADP and phosphate, squeezes them into ATP, and lets the ATP go.</p></noscript>
+  <div class="fig-controls"><div class="slider"><label class="slider-label" for="atp-synthase-flow">Proton flow</label><div class="slider-row"><span aria-hidden="true">Stopped</span><input type="range" id="atp-synthase-flow" min="0" max="100" step="1" value="0" aria-valuetext="Stopped"><span aria-hidden="true">Full</span></div></div><button type="button" class="btn" id="atp-synthase-reset">Reset view</button><button type="button" class="btn btn-swap" data-pause aria-pressed="false" aria-label="Pause this figure"><span>Play</span><span>Pause</span></button></div>
 </figure>
 
   <p>As the bent axle turns, it presses on each site in turn and changes its shape. One site grips ADP and phosphate. The next clamps down tight, and inside the tight pocket the two join into ATP. The third opens and lets a finished ATP go. Every site takes a turn at every job. <b>One full turn of the rotor makes three ATP.</b></p>
@@ -543,7 +547,7 @@ import { mount as glucoseApart } from "./figures/glucose-apart.js";
 glucoseApart(document.getElementById("glucose-apart"));
 import { mount as protonDam } from "./figures/proton-dam.js";
 protonDam(document.getElementById("proton-dam"));
-
+lazy("atp-synthase", () => import("./figures/atp-synthase.js"));
 initPage();
 </script>
 </body>
