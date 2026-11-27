@@ -448,9 +448,12 @@
 
   <p>This loop, ATP to ADP and back, is the <em>ATP–ADP cycle</em>. Press <b>Play</b> under the next picture to watch the whole chain that keeps it turning.</p>
 
-  <figure class="fig fig-pending" id="atp-cycle-recap" data-figure="9.1">
-  <div class="fig-art"><svg class="art" width="980" height="160" viewBox="0 0 980 160" role="img" aria-labelledby="atp-cycle-recap-alt"><text x="490" y="84" text-anchor="middle" class="t-small t-muted">Figure 9.1 is being drawn</text></svg></div>
+  <figure class="fig" id="atp-cycle-recap" data-figure="9.1">
+  <div class="fig-art"><svg class="art" width="980" height="620" viewBox="0 0 980 620" role="img" aria-labelledby="atp-cycle-recap-alt"></svg></div>
   <p class="sr-only" id="atp-cycle-recap-alt">A loop diagram of the whole system. Food and breath enter on the left. Food is taken apart, sending carbon dioxide out and loaded carriers on; the carriers feed a chain in a membrane that pumps protons and turns oxygen into water; the protons spin ATP synthase, which sends out ATP; ATP is spent by a muscle motor, a pump and a builder, and comes back as ADP and phosphate.</p>
+  <p class="fig-caption is-live" id="atp-cycle-recap-caption" aria-live="polite"></p>
+  <noscript><p class="fig-caption">This figure needs JavaScript. It shows: A loop diagram of the whole system. Food and breath enter on the left. Food is taken apart, sending carbon dioxide out and loaded carriers on; the carriers feed a chain in a membrane that pumps protons and turns oxygen into water; the protons spin ATP synthase, which sends out ATP; ATP is spent by a muscle motor, a pump and a builder, and comes back as ADP and phosphate.</p></noscript>
+  <div class="fig-controls"><button type="button" class="btn btn-swap" data-pause aria-pressed="false" aria-label="Pause this figure"><span>Play</span><span>Pause</span></button><button type="button" class="btn btn-action" id="atp-cycle-recap-step">Step</button></div>
 </figure>
 
   <p>The chain runs like this:</p>
@@ -468,9 +471,11 @@
 
   <p>Count the atoms, and nothing is lost. In go food and oxygen. Out come carbon dioxide, carrying the food's carbon, and water, made from the oxygen you breathed. The energy comes out as roughly 30 to 32 ATP for every glucose, plus a good deal of heat, which keeps you warm.</p>
 
-  <figure class="fig fig-pending" id="atom-ledger" data-figure="9.2">
-  <div class="fig-art"><svg class="art" width="700" height="160" viewBox="0 0 700 160" role="img" aria-labelledby="atom-ledger-alt"><text x="350" y="84" text-anchor="middle" class="t-small t-muted">Figure 9.2 is being drawn</text></svg></div>
+  <figure class="fig" id="atom-ledger" data-figure="9.2">
+  <div class="fig-art"><svg class="art" width="700" height="300" viewBox="0 0 700 300" role="img" aria-labelledby="atom-ledger-alt"></svg></div>
   <p class="sr-only" id="atom-ledger-alt">Bars to scale. Ten kilograms of fat and 29 of oxygen go in; 28 kilograms of carbon dioxide and 11 of water come out, so both sides weigh 39 kilograms.</p>
+  <p class="sr-only" id="atom-ledger-status" aria-live="polite"></p>
+  <noscript><p class="fig-caption">This figure needs JavaScript. It shows: Bars to scale. Ten kilograms of fat and 29 of oxygen go in; 28 kilograms of carbon dioxide and 11 of water come out, so both sides weigh 39 kilograms.</p></noscript>
 </figure>
 
   <p><b>Your cells keep ATP far from balance, like a ball held high on a hill. Food and oxygen carry it back up, and every pull, pump and build lets it roll back down.</b> That is how ATP powers you.</p>
@@ -547,6 +552,10 @@ import { mount as glucoseApart } from "./figures/glucose-apart.js";
 glucoseApart(document.getElementById("glucose-apart"));
 import { mount as protonDam } from "./figures/proton-dam.js";
 protonDam(document.getElementById("proton-dam"));
+import { mount as atpCycleRecap } from "./figures/atp-cycle-recap.js";
+atpCycleRecap(document.getElementById("atp-cycle-recap"));
+import { mount as atomLedger } from "./figures/atom-ledger.js";
+atomLedger(document.getElementById("atom-ledger"));
 lazy("atp-synthase", () => import("./figures/atp-synthase.js"));
 initPage();
 </script>
