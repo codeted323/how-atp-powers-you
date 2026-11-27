@@ -101,7 +101,9 @@ const KINDS = {
  * Makes a moving particle in `parent`.
  * @param {string} kind o2 | co2 | hco3 | e | e2 | h | h2o
  * @param {object} o  role: "flow" (default) or "muted" for context
- *                    (water that only takes part), id: prefixed id
+ *                    (water that only takes part), id: prefixed id,
+ *                    upright: the molecule doesn't turn with its heading,
+ *                    scale: size (strokes keep their width)
  * @returns {{g: SVGGElement, place(x, y, heading?, moving?): void}}
  */
 export function particle(parent, kind, o = {}) {
@@ -141,7 +143,8 @@ export function particle(parent, kind, o = {}) {
       body.setAttribute("transform", `rotate(${(spin - h).toFixed(1)})`);
       g.setAttribute(
         "transform",
-        `translate(${x.toFixed(2)} ${y.toFixed(2)}) rotate(${h.toFixed(1)})`,
+        `translate(${x.toFixed(2)} ${y.toFixed(2)}) rotate(${h.toFixed(1)})` +
+          (o.scale ? ` scale(${o.scale})` : ""),
       );
       tail.style.display = moving ? "" : "none";
     },

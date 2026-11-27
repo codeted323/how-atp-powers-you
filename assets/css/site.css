@@ -512,6 +512,7 @@ svg.art text.t-small { font-size: 15px; }
 svg.art text.t-muted { fill: var(--palette-muted, #736a60); }
 svg.art text.t-second { fill: var(--palette-second, #b5601e); }
 svg.art text.t-mono { font-family: var(--font-mono); font-weight: 600; }
+svg.art text.t-name { font-size: 26px; font-weight: 600; }
 svg.art text.t-big { font-family: var(--font-serif); font-weight: 600; font-size: 26px; }
 /* the flash: "look at this part" (0.25 s on, 0.25 s off, five times) */
 .is-flash .l-subject,
