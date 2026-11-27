@@ -201,6 +201,30 @@ h2.part-heading {
   font-variation-settings: "opsz" 48;
 }
 
+/* A part's heading: a small eyebrow over the title, then its tagline */
+.part {
+  scroll-margin-top: 1em;
+}
+.part-eyebrow {
+  display: block;
+  margin: 0 0 0.35em;
+  font-family: var(--font-sans);
+  font-size: 0.42em;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--palette-muted);
+}
+.part-tagline {
+  margin: -0.2em 0 1.2em;
+  font-size: 1.2em;
+  font-style: italic;
+  line-height: 1.3;
+}
+.part-tagline em {
+  font-style: italic;
+}
+
 /* Contents: in the left margin on a wide screen, behind a button on a phone */
 .contents {
   margin: 0 0 2em;
@@ -236,12 +260,22 @@ h2.part-heading {
 .contents .contents-title {
   display: none;
 }
+.contents a {
+  text-decoration: none;
+}
+.contents a:hover {
+  text-decoration: underline;
+}
+.contents a[aria-current] {
+  font-weight: 600;
+}
 @media (min-width: 1280px) {
   .contents {
     position: absolute;
     top: 56px;
-    left: max(var(--gutter), calc(50% - var(--column) / 2 - 270px));
-    width: 220px;
+    left: var(--gutter);
+    width: calc(50% - var(--column) / 2 - 2 * var(--gutter));
+    max-width: 220px;
     margin: 0;
   }
   .contents-toggle {
@@ -254,6 +288,13 @@ h2.part-heading {
   .contents ol {
     display: block;
     margin: 0;
+  }
+}
+/* fixed beside the text only where it clears the 980 px figures */
+@media (min-width: 1400px) {
+  .contents {
+    position: fixed;
+    width: calc(50% - var(--figure-max) / 2 - var(--gutter) - 16px);
   }
 }
 
@@ -423,6 +464,37 @@ h2.part-heading {
 }
 .word-hidden {
   visibility: hidden;
+}
+.fig-counter {
+  margin: 0.5em 0 0;
+  min-height: 1.6em;
+  font-size: 0.85em;
+  text-align: center;
+}
+.fig-pending svg.art {
+  background: var(--palette-panel);
+}
+.src-parts {
+  white-space: nowrap;
+}
+canvas.gl {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  touch-action: pan-y;
+  cursor: grab;
+}
+canvas.gl:active {
+  cursor: grabbing;
+}
+.gl-fallback {
+  display: none !important;
+}
+.no-gl canvas.gl {
+  display: none;
+}
+.no-gl .gl-fallback {
+  display: block !important;
 }
 .counter {
   font-family: var(--font-mono);

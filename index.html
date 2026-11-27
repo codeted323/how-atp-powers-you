@@ -2,12 +2,503 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How ATP Powers You</title>
-<meta http-equiv="refresh" content="0; url=article/1/">
-<link rel="canonical" href="article/1/">
+<meta name="description" content="An illustrated explainer in nine parts: what ATP is, what kind of energy it holds, how it makes things move, and how the air you breathe and the food you eat rebuild it.">
 <link rel="icon" href="data:,">
+<link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/fraunces-latin-opsz.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-<p><a href="article/1/">How ATP Powers You</a></p>
+<main class="page">
+<article class="column">
+  <header>
+    <h1 class="title">How ATP Powers You</h1>
+    <p class="byline">Asked for by Ted Dean (actually by Claude, Martin C. Martin, and scientists)</p>
+    <p class="motion-note">All the figures move; <button type="button" class="link-button" data-pause-all aria-pressed="false">pause all</button></p>
+  </header>
+
+  <nav class="contents" aria-label="Contents">
+    <button type="button" class="contents-toggle" aria-expanded="false" aria-controls="contents-list">Contents</button>
+    <p class="contents-title">Contents</p>
+    <ol id="contents-list">
+      <li><a href="#part-1">The coin every cell spends</a></li>
+      <li><a href="#part-2">What kind of energy is it?</a></li>
+      <li><a href="#part-3">How ATP makes things move</a></li>
+      <li><a href="#part-4">How ATP powers everything else</a></li>
+      <li><a href="#part-5">From breath to cell</a></li>
+      <li><a href="#part-6">Taking food apart</a></li>
+      <li><a href="#part-7">The proton dam</a></li>
+      <li><a href="#part-8">The spinning motor</a></li>
+      <li><a href="#part-9">The whole cycle</a></li>
+    </ol>
+  </nav>
+
+  <p>Right now, every cell in your body is spending energy. A muscle cell is pulling. A nerve cell is pushing salt out through its skin. A liver cell is building a protein, one link at a time. Nearly all of them pay the same way, with a small molecule called ATP.</p>
+
+  <p>You never hold much of it. The ATP inside a hard-working muscle lasts only a second or two before it has to be rebuilt. Yet across one day you make and spend an astonishing amount: estimates run from about half your body weight to all of it. During hard work, the total climbs far higher.</p>
+
+  <p>This explainer follows ATP from start to finish: what it is, what kind of energy it holds, how it makes things move, and how the air you breathe and the food you eat rebuild it.</p>
+
+  <p><em>Its style is borrowed from Martin C. Martin's <a href="https://martincmartin.github.io/slidev-stem/watches/article/1/">What Everyone Should Know About Mechanical Watches</a>, which was itself inspired by Bartosz Ciechanowski's <a href="https://ciechanow.ski/mechanical-watch/">Mechanical Watch</a>. All the figures move. When a figure has a slider or a button, the text tells you what to do with it.</em></p>
+
+<section class="part" id="part-1" aria-labelledby="part-1-title">
+  <h2 class="part-heading" id="part-1-title"><span class="part-eyebrow">Part 1</span>The coin every cell spends</h2>
+  <p class="part-tagline"><em>One small molecule pays for nearly everything your cells do.</em></p>
+
+  <p>ATP is your cells' everyday energy money. Its full name is <em>adenosine triphosphate</em>.</p>
+
+  <p>Think of coins. You earn them in one place and spend them in another, and the same coins go round and round. Cells do the same with ATP. They charge it up in one place and spend it somewhere else, and each molecule makes the trip again and again.</p>
+
+  <p>ATP has three parts. At one end is <em>adenine</em>, a flat pair of rings. Next comes <em>ribose</em>, a small sugar. Together those two are called <em>adenosine</em>. Hanging off the sugar is a short tail of three <em>phosphates</em>, each one a phosphorus atom wrapped in oxygen atoms. "Tri" means three.</p>
+
+  <p>Look at the tail in the next picture. Press <b>Spend</b> to snap off the last phosphate.</p>
+
+  <figure class="fig" id="atp-molecule" data-figure="1.1">
+  <div class="fig-art"><svg class="art" width="900" height="360" viewBox="0 0 900 360" role="img" aria-labelledby="atp-molecule-alt"></svg></div>
+  <p class="sr-only" id="atp-molecule-alt">A cartoon of ATP: a double ring, a five-sided sugar, and a tail of three round phosphate beads. The last bead breaks off with a water molecule&#x27;s help, leaving a two-bead molecule labeled ADP, and then snaps back on.</p>
+  <p class="sr-only" id="atp-molecule-status" aria-live="polite"></p>
+  <noscript><p class="fig-caption">This figure needs JavaScript. It shows: A cartoon of ATP: a double ring, a five-sided sugar, and a tail of three round phosphate beads. The last bead breaks off with a water molecule&#x27;s help, leaving a two-bead molecule labeled ADP, and then snaps back on.</p></noscript>
+  <div class="fig-controls"><button type="button" class="btn btn-action" id="atp-molecule-spend">Spend</button><button type="button" class="btn btn-action" id="atp-molecule-recharge">Recharge</button><button type="button" class="btn btn-swap" data-pause aria-pressed="false" aria-label="Pause this figure"><span>Play</span><span>Pause</span></button></div>
+</figure>
+
+  <p>With help from a water molecule, the end phosphate comes off and floats free. What is left has two phosphates, so it is called <em>ADP</em>, adenosine diphosphate. That one small reaction gives off energy the cell can use.</p>
+
+  <div class="with-aside">
+    <aside class="aside" aria-label="Why phosphate?">
+      <p class="aside-title"><span class="aside-label">More · </span>Why phosphate?</p>
+      <p>Phosphates carry negative electric charge. The charge keeps them from slipping out through a cell's oily skin, and it makes them break down only very slowly in plain water. That pairing suits an energy carrier: ATP holds plenty of energy, yet it sits still until a protein helps it react. The chemist Frank Westheimer laid out this argument in 1987.</p>
+    </aside>
+    <p>Now press <b>Recharge</b>. Putting the phosphate back on makes ATP again, but it costs energy, at least as much as the snap gave. Most recharging happens inside small compartments called mitochondria, which parts 5 to 8 visit.</p>
+  </div>
+
+  <div class="with-aside">
+    <aside class="aside" aria-label="Only in people?">
+      <p class="aside-title"><span class="aside-label">More · </span>Only in people?</p>
+      <p>No. All cells, from bacteria to plants to people, run on ATP.</p>
+    </aside>
+    <p>ATP was discovered in 1929 by the German chemist Karl Lohmann, and at the same time by Cyrus Fiske and Yellapragada SubbaRow at Harvard. Between 1939 and 1941, Fritz Lipmann showed that it is the cell's general carrier of energy, spent in one reaction after another.</p>
+  </div>
+
+  <p><b>That is the whole loop in one line: ATP is spent to ADP, and ADP is charged back to ATP.</b> The rest of this explainer is about the two halves of that loop.</p>
+
+  <p>But what actually comes out when the phosphate snaps off? Is it like a spring letting go?</p>
+</section>
+<section class="part" id="part-2" aria-labelledby="part-2-title">
+  <h2 class="part-heading" id="part-2-title"><span class="part-eyebrow">Part 2</span>What kind of energy is it?</h2>
+  <p class="part-tagline"><em>It isn't hidden in a bond. It comes from how far the cell keeps ATP from balance.</em></p>
+
+  <p>When ATP becomes ADP, it gives off what scientists call <em>free energy</em>: energy that can do work, like pulling, pumping or building, rather than only warming things up.</p>
+
+  <p>You may have learned that this energy is stored in a "high-energy bond." That is handy shorthand, but taken literally it is wrong. Breaking a chemical bond always takes energy. It never releases energy on its own.</p>
+
+  <p>The energy comes from the whole swap. ATP's three phosphates each carry negative charge, packed close in a row, and like charges push apart. Once the end phosphate is off, the two pieces stop crowding each other. The loose phosphate spreads its charge more evenly, and water wraps around both pieces more snugly. Together, ADP and phosphate sit lower in energy than ATP and water did.</p>
+
+  <p>Picture a ball on a hill. The ball isn't special; nothing is hidden inside it. Its energy is in where it sits: high above the spot where it would end up if you let go.</p>
+
+  <p>Now for the part many textbooks skip. Leave ATP in water long enough, and nearly all of it falls apart into ADP and phosphate. That resting point, where the reaction runs no further either way, is called <em>equilibrium</em>. At equilibrium there would be tens to hundreds of millions of ADP for every ATP.</p>
+
+  <p>Your cells never let it get there. In a resting muscle there are hundreds of ATP for each free ADP. The cell keeps the ball carried far up the hill.</p>
+
+  <p>Drag the slider under the next picture from <b>Balance</b> toward <b>Living cell</b>, and watch how much energy each ATP has to offer.</p>
+
+  <figure class="fig fig-pending" id="atp-hill" data-figure="2.1">
+  <div class="fig-art"><svg class="art" width="900" height="160" viewBox="0 0 900 160" role="img" aria-labelledby="atp-hill-alt"><text x="450" y="84" text-anchor="middle" class="t-small t-muted">Figure 2.1 is being drawn</text></svg></div>
+  <p class="sr-only" id="atp-hill-alt">A hill with a ball labeled ATP. A bracket from the bottom of the hill to the ball shows the energy on offer. At Balance the ball is at the bottom; at Lab standard it is partway up; at Living cell it is nearly twice as high.</p>
+</figure>
+
+  <div class="with-aside">
+    <aside class="aside" aria-label="The numbers, for the curious.">
+      <p class="aside-title"><span class="aside-label">More · </span>The numbers, for the curious.</p>
+      <p>Chemists measure this energy per <em>mole</em>, a fixed, huge count of molecules. Under standard lab conditions, splitting a mole of ATP releases about 30 kilojoules (about 7.3 kilocalories). Inside cells it is roughly 50 to 65 kilojoules; one study of resting human muscle measured about 64.</p>
+    </aside>
+    <p>At balance the ball sits at the bottom, and splitting ATP gives nothing. The farther the cell pushes the mix toward ATP, the higher the ball, and the more energy each split releases. Inside your cells, each ATP gives up nearly twice what it would under a chemist's standard lab conditions.</p>
+  </div>
+
+  <div class="with-aside">
+    <aside class="aside" aria-label="Then why say &quot;high-energy bond&quot;?">
+      <p class="aside-title"><span class="aside-label">More · </span>Then why say "high-energy bond"?</p>
+      <p>Biologists still use the phrase as shorthand for "this molecule gives up a lot of energy when split." Just remember that the energy belongs to the whole reaction and to the cell's mix, not to one bond.</p>
+    </aside>
+    <p>So what kind of energy is it? It is chemical energy: the energy of a reaction held far from balance. It is not mechanical energy, and it is not heat. Heat could not do this job anyway. An engine that runs on heat needs a hot side and a cold side, and a cell is nearly the same temperature all through.</p>
+  </div>
+
+  <p><b>ATP's energy lies in how far the cell keeps it from balance, like a ball held high on a hill.</b> The cell's machines collect that energy by letting the ball roll down, but only while it pushes on them.</p>
+
+  <p>A protein isn't a ball on a hill, though. So how does a chemical reaction become a pull?</p>
+</section>
+<section class="part" id="part-3" aria-labelledby="part-3-title">
+  <h2 class="part-heading" id="part-3-title"><span class="part-eyebrow">Part 3</span>How ATP makes things move</h2>
+  <p class="part-tagline"><em>Motor proteins turn chemistry into motion by changing shape.</em></p>
+
+  <p>Every move you make, from a blink to a sprint, comes from a protein called <em>myosin</em>. In a muscle, rows of myosin lie side by side with thin strands of another protein, <em>actin</em>. Myosin's heads reach out, grab the actin, and pull.</p>
+
+  <p>Picture a rowing crew. Each oar dips, pulls, lifts out and swings forward to dip again. One stroke doesn't move the boat far, but hundreds of oars working out of step keep it gliding. Myosin heads row along actin the same way, and each stroke uses one ATP.</p>
+
+  <p>ATP doesn't push the head itself. Instead, each stage of ATP's breakdown switches the head to a new shape. Press <b>Step</b> under the next picture to walk one head through its cycle.</p>
+
+  <figure class="fig fig-pending" id="myosin-row" data-figure="3.1">
+  <div class="fig-art"><svg class="art" width="980" height="160" viewBox="0 0 980 160" role="img" aria-labelledby="myosin-row-alt"><text x="490" y="84" text-anchor="middle" class="t-small t-muted">Figure 3.1 is being drawn</text></svg></div>
+  <p class="sr-only" id="myosin-row-alt">A myosin head under a strand of actin. An ATP enters its pocket and the head lifts off; the head tilts back and splits the ATP; it grips the actin farther along; then it swings as it lets the phosphate go, pulling the strand to one side.</p>
+</figure>
+
+  <ol class="steps">
+    <li><b>Let go.</b> An ATP slips into a pocket on the head. With ATP in place, the head loses its grip on actin.</li>
+    <li><b>Reach.</b> The head swings back to a cocked, ready position and splits the ATP. The ADP and phosphate stay in the pocket.</li>
+    <li><b>Grab.</b> The cocked head grips the actin again, a little farther along.</li>
+    <li><b>Pull.</b> As the head lets go of the phosphate, it swings, dragging the actin with it. This swing is the <em>power stroke</em>. Then the head releases the ADP and stays stuck tight to the actin until a fresh ATP arrives.</li>
+  </ol>
+
+  <div class="with-aside">
+    <aside class="aside" aria-label="Why do bodies stiffen after death?">
+      <p class="aside-title"><span class="aside-label">More · </span>Why do bodies stiffen after death?</p>
+      <p>Without ATP, myosin heads can't let go of actin. After death the ATP runs out, the heads lock on, and the muscles go rigid. This is <em>rigor mortis</em>. It fades later, as the muscle proteins themselves break down.</p>
+    </aside>
+    <p>Notice what ATP did. Binding it, splitting it and letting its pieces go acted like turning a key in a lock, again and again, flipping the head from one shape to the next. And because ATP's breakdown runs downhill, the cycle almost always runs one way: forward.</p>
+  </div>
+
+  <p>Proteins that work like this are called <em>motor proteins</em>. They take ATP's chemical energy and turn it into motion.</p>
+
+  <p>The same trick moves cargo inside your cells. <em>Kinesin</em> is a motor with two feet that walks along thin tracks called microtubules, hauling packages from one part of a cell to another. In 1997 Mark Schnitzer and Steven Block, at Princeton, showed that kinesin uses one ATP for every 8-nanometer step. That is about a ten-thousandth of the width of a human hair.</p>
+
+  <figure class="fig fig-pending" id="kinesin-walk" data-figure="3.2">
+  <div class="fig-art"><svg class="art" width="980" height="160" viewBox="0 0 980 160" role="img" aria-labelledby="kinesin-walk-alt"><text x="490" y="84" text-anchor="middle" class="t-small t-muted">Figure 3.2 is being drawn</text></svg></div>
+  <p class="sr-only" id="kinesin-walk-alt">A two-footed motor walking along a striped track, towing a round package. Each time a back foot swings to the front, one ATP is used and its foot lands two stripes ahead, while the motor&#x27;s body moves one stripe, 8 nanometers. A counter keeps the tally.</p>
+</figure>
+
+  <div class="with-aside">
+    <aside class="aside" aria-label="Is it really a &quot;stroke&quot;?">
+      <p class="aside-title"><span class="aside-label">More · </span>Is it really a "stroke"?</p>
+      <p>Not everyone agrees on the details. Water molecules strike a protein trillions of times a second, jiggling it back and forth. Some biophysicists argue that motors work mostly as ratchets: the jiggling moves them both ways, and ATP's breakdown blocks the backward moves. Others stress the power stroke, and many think both play a part. Researchers also still debate whether the phosphate leaves just before the swing or just after.</p>
+    </aside>
+    <p>So, is ATP mechanical energy? No. <b>ATP is chemical energy, and motor proteins are the converters.</b> They turn ATP's downhill chemistry into pulls and steps, one molecule at a time.</p>
+  </div>
+
+  <p>Muscles and walking motors are the most visible ways you spend ATP. At rest, they are not where most of it goes.</p>
+</section>
+<section class="part" id="part-4" aria-labelledby="part-4-title">
+  <h2 class="part-heading" id="part-4-title"><span class="part-eyebrow">Part 4</span>How ATP powers everything else</h2>
+  <p class="part-tagline"><em>Pumps, building and switches: ATP's breakdown is tied to a job.</em></p>
+
+  <p>When you sit still, your muscles' myosin uses only a few percent of your ATP. The biggest bills are for jobs you never feel: building proteins and pumping salt.</p>
+
+  <p>Start with the pump. Every cell's skin, its <em>membrane</em>, is studded with the <em>sodium–potassium pump</em>. Each cycle, it pushes three sodium ions out of the cell and pulls two potassium ions in. Both go against the flow, like pumping water uphill, and each cycle costs one ATP.</p>
+
+  <p>Watch the pump in the next picture. Press <b>Play</b> and follow the orange phosphate.</p>
+
+  <figure class="fig fig-pending" id="sodium-pump" data-figure="4.1">
+  <div class="fig-art"><svg class="art" width="900" height="160" viewBox="0 0 900 160" role="img" aria-labelledby="sodium-pump-alt"><text x="450" y="84" text-anchor="middle" class="t-small t-muted">Figure 4.1 is being drawn</text></svg></div>
+  <p class="sr-only" id="sodium-pump-alt">A pump spanning a cell&#x27;s skin. Three sodium ions enter it from inside; an ATP hands it a phosphate, and the pump flips open to the outside and lets the sodium go. Two potassium ions enter, the phosphate drops off, and the pump flips back to release them inside.</p>
+</figure>
+
+  <p>The pump grabs an ATP and moves its end phosphate onto itself. That added phosphate flips the pump's shape, so its pocket opens to the outside and lets the sodium go. Potassium climbs in from outside. Then the phosphate drops off, the pump flips back, and it lets the potassium go inside.</p>
+
+  <p>Here again, ATP worked by changing a protein's shape. And the job is huge. At rest, this one pump uses roughly a fifth to a third of all your ATP, and in the brain, by some estimates, about half. The salt difference it builds is what lets nerves fire, and it helps many cells take in nutrients.</p>
+
+  <p>Jens Skou, a Danish physician, found the pump in 1957 by studying nerves from crabs. Over the years his lab boiled tens of thousands of crabs for the work. In 1997 it won him a share of the Nobel Prize in Chemistry.</p>
+
+  <p>Building works a little differently. Many of a cell's jobs are uphill: left alone, they run the wrong way. Linking amino acids into a protein is one. Joining the letters of DNA is another. The cell makes them happen by tying them to the downhill breakdown of ATP or of its close chemical cousins.</p>
+
+  <p>Picture two buckets on one rope over a pulley. On its own, a light bucket never rises. Tie it to a heavier one that is falling, and up it goes. Press <b>Tie the rope</b> under the next picture.</p>
+
+  <figure class="fig fig-pending" id="coupled-buckets" data-figure="4.2">
+  <div class="fig-art"><svg class="art" width="700" height="160" viewBox="0 0 700 160" role="img" aria-labelledby="coupled-buckets-alt"><text x="350" y="84" text-anchor="middle" class="t-small t-muted">Figure 4.2 is being drawn</text></svg></div>
+  <p class="sr-only" id="coupled-buckets-alt">Two buckets beside a pulley. Untied, the light bucket stays on the floor. Once a rope joins them, the heavy bucket marked ATP to ADP drops and hauls the light bucket, marked uphill job, up into the air.</p>
+</figure>
+
+  <p>In chemistry, the rope is usually a hand-off. ATP passes its end phosphate, or a larger piece of itself, to a building block. The tagged block is now eager to react, so the next step runs downhill. This trick is called <em>coupling</em>. Adding a single amino acid to a growing protein costs about four ATPs' worth of energy.</p>
+
+  <div class="with-aside">
+    <aside class="aside" aria-label="Where does resting ATP go?">
+      <p class="aside-title"><span class="aside-label">More · </span>Where does resting ATP go?</p>
+      <p>One careful tally for resting mammals looked at the oxygen used to make ATP. About 25–30% pays for building proteins, 19–28% for the sodium–potassium pump, 4–8% for calcium pumps, 2–8% for muscle myosin, and 7–10% for making new glucose in the liver. These are estimates, and the mix changes the moment you move.</p>
+    </aside>
+    <p>ATP also flips switches. Enzymes called <em>kinases</em> move a phosphate from ATP onto other proteins, turning them on or off. Many messages inside a cell, such as the signal from a hormone, are passed along this way.</p>
+  </div>
+
+  <figure class="fig fig-pending" id="atp-budget" data-figure="4.3">
+  <div class="fig-art"><svg class="art" width="700" height="160" viewBox="0 0 700 160" role="img" aria-labelledby="atp-budget-alt"><text x="350" y="84" text-anchor="middle" class="t-small t-muted">Figure 4.3 is being drawn</text></svg></div>
+  <p class="sr-only" id="atp-budget-alt">Five horizontal range bars, one per job, for resting mammals: building proteins 25 to 30 percent, the sodium–potassium pump 19 to 28, calcium pumps 4 to 8, muscle myosin 2 to 8, and making new glucose 7 to 10.</p>
+</figure>
+
+  <p>In every case, ATP is not burned like fuel in a fire. Its breakdown is tied, step by step, to a job: it changes a protein's shape, or it tags a molecule. If the tie slips, the energy is simply lost as heat.</p>
+
+  <p><b>ATP powers a job by being spent on it directly, through a change of shape or a hand-off.</b></p>
+
+  <p>All this spending leaves a growing pile of ADP and loose phosphate. Something has to put the phosphates back on, all day long. That work starts with your next breath.</p>
+</section>
+<section class="part" id="part-5" aria-labelledby="part-5-title">
+  <h2 class="part-heading" id="part-5-title"><span class="part-eyebrow">Part 5</span>From breath to cell</h2>
+  <p class="part-tagline"><em>Oxygen rides in on your blood; carbon dioxide rides back out.</em></p>
+
+  <p>To rebuild ATP, your cells need oxygen. Getting it to them is the job of your lungs and blood.</p>
+
+  <p>Take a breath. Air rushes down branching tubes that end in tiny air sacs called <em>alveoli</em>. A pair of adult lungs holds roughly 480 million of them, each wrapped in a mesh of tiny blood vessels. The wall between air and blood is extremely thin, so oxygen slips straight across.</p>
+
+  <p>It moves the way a drop of ink spreads in water: from where there is more of it to where there is less. This drifting is called <em>diffusion</em>. It carries oxygen across each wall on the trip: from the air sac into the blood, and from the blood into a cell. Between the walls, oxygen rides the flow of air and blood, driven by your breathing muscles and your heart. No pump pushes oxygen across a wall into a cell.</p>
+
+  <div class="with-aside">
+    <aside class="aside" aria-label="Why so many air sacs?">
+      <p class="aside-title"><span class="aside-label">More · </span>Why so many air sacs?</p>
+      <p>Gas only crosses where air meets blood. Folding the lung into hundreds of millions of tiny sacs packs a huge meeting surface into your chest.</p>
+    </aside>
+    <p>In the blood, oxygen boards red blood cells. Each one is packed with <em>hemoglobin</em>, a protein with four seats for oxygen. Think of a bus with four seats. It fills up in the lungs, where oxygen is plentiful, and lets riders off in the body's tissues, where cells have used their oxygen up.</p>
+  </div>
+
+  <p>Press <b>Breathe</b> under the next picture. Follow one oxygen molecule all the way in, then one carbon dioxide molecule all the way out.</p>
+
+  <figure class="fig fig-pending" id="breath-path" data-figure="5.1">
+  <div class="fig-art"><svg class="art" width="980" height="160" viewBox="0 0 980 160" role="img" aria-labelledby="breath-path-alt"><text x="490" y="84" text-anchor="middle" class="t-small t-muted">Figure 5.1 is being drawn</text></svg></div>
+  <p class="sr-only" id="breath-path-alt">A strip from a lung&#x27;s air sac to a body cell. An oxygen molecule crosses into the blood, rides a four-seat hemoglobin to the far end, drifts into a cell and reaches a mitochondrion. A carbon dioxide molecule makes the reverse trip, dissolved in the blood for most of the way, and leaves through the air sac.</p>
+</figure>
+
+  <div class="with-aside">
+    <aside class="aside" aria-label="Where did mitochondria come from?">
+      <p class="aside-title"><span class="aside-label">More · </span>Where did mitochondria come from?</p>
+      <p>Mitochondria were once free-living bacteria. Long ago, one was taken inside an ancestor of our cells and never left. In 1967 the biologist Lynn Margulis made the case for this idea, and genetic evidence has since backed it. Mitochondria still carry a small set of their own genes.</p>
+    </aside>
+    <p>From a tiny blood vessel, the oxygen drifts into a cell and on to its <em>mitochondria</em>, the small compartments where ATP is rebuilt. That is the end of the line.</p>
+  </div>
+
+  <p>Carbon dioxide makes the return trip. Mitochondria make most of it (part 6 shows how), and it drifts out into the blood. Most of it doesn't travel as a gas. It reacts with water to become <em>bicarbonate</em>, which dissolves in the blood like salt in water. Some rides on hemoglobin, and a little stays as plain dissolved gas. Back at the lungs, the bicarbonate turns back into carbon dioxide, which drifts into the air sacs, and you breathe it out.</p>
+
+  <p><b>Breathing is a delivery service: oxygen in, carbon dioxide out, carried by blood and moved across each wall by diffusion.</b></p>
+
+  <p>Oxygen has reached the mitochondria. But on its own, oxygen does nothing there. It needs a partner from your dinner.</p>
+</section>
+<section class="part" id="part-6" aria-labelledby="part-6-title">
+  <h2 class="part-heading" id="part-6-title"><span class="part-eyebrow">Part 6</span>Taking food apart</h2>
+  <p class="part-tagline"><em>The carbon leaves as CO2. The electrons are saved.</em></p>
+
+  <p>Oxygen is half of the story. The other half is on your plate.</p>
+
+  <p>Food is made mostly of carbon, hydrogen and oxygen atoms. Take <em>glucose</em>, the sugar your blood carries. It is built on six carbon atoms, with hydrogens and oxygens attached. To rebuild ATP, cells take glucose apart, piece by piece.</p>
+
+  <p>Picture stripping an old car for parts. The frame goes off to the scrapyard, and the valuable pieces are set aside. In a cell, the scrap is carbon, which leaves as carbon dioxide. The valuable pieces are <em>electrons</em>, pulled from the food and loaded onto carrier molecules. The main carrier is called <em>NADH</em>.</p>
+
+  <p>Press <b>Step</b> under the next picture to take one glucose apart.</p>
+
+  <figure class="fig fig-pending" id="glucose-apart" data-figure="6.1">
+  <div class="fig-art"><svg class="art" width="980" height="160" viewBox="0 0 980 160" role="img" aria-labelledby="glucose-apart-alt"><text x="490" y="84" text-anchor="middle" class="t-small t-muted">Figure 6.1 is being drawn</text></svg></div>
+  <p class="sr-only" id="glucose-apart-alt">A chain of six carbon beads splits in two. The halves move into a mitochondrion, where each drops one bead as carbon dioxide and then rides a circular loop, dropping two more. Along the way, small carrier shuttles fill up with electrons. At the end no carbon is left, six carbon dioxide molecules have drifted off, and twelve carriers are full.</p>
+</figure>
+
+  <div class="with-aside">
+    <aside class="aside" aria-label="Without oxygen?">
+      <p class="aside-title"><span class="aside-label">More · </span>Without oxygen?</p>
+      <p>Glycolysis can run with no oxygen at all. It makes just two ATP per glucose and turns the halves into lactate. Sprinting muscles lean on it for short bursts.</p>
+    </aside>
+    <p>First, in the fluid that fills the cell, glucose is split into two halves. This stage is <em>glycolysis</em>. It makes a little ATP directly, two per glucose, and loads two carriers.</p>
+  </div>
+
+  <div class="with-aside">
+    <aside class="aside" aria-label="A second carrier.">
+      <p class="aside-title"><span class="aside-label">More · </span>A second carrier.</p>
+      <p>One step of the Krebs cycle loads a different carrier, called FADH2. It hands its electrons in partway down the chain in part 7, so it is worth less: about 1.5 ATP, against NADH's 2.5.</p>
+    </aside>
+    <p>The two halves then enter a mitochondrion. Each one sheds a carbon as CO2, and what remains joins a loop of reactions called the <em>Krebs cycle</em> (it is also called the citric acid cycle). Each turn of the loop sheds two more carbons as CO2 and loads more carriers. By the end, all six of the glucose's carbons have left as CO2.</p>
+  </div>
+
+  <p>Here is the surprise. <b>The carbon dioxide you breathe out is carbon from your food.</b> The oxygen you breathe in does not become CO2. It ends up as water, as part 7 shows. Later, in the blood, carbon dioxide and water do swap some oxygen atoms. But the carbon in carbon dioxide always comes from food.</p>
+
+  <div class="with-aside">
+    <aside class="aside" aria-label="What about protein?">
+      <p class="aside-title"><span class="aside-label">More · </span>What about protein?</p>
+      <p>Cells can break down protein too, feeding its pieces into the same pathways. Its nitrogen can't leave as CO2, so the liver turns it into <em>urea</em>, which leaves in urine.</p>
+    </aside>
+    <p>Fat goes through the same mill. It is chopped into two-carbon pieces that feed the same loop. So when you lose fat, most of its mass leaves through your lungs. A 2014 study in the BMJ traced every atom: of 10 kilograms of fat lost, about 8.4 kilograms leave as carbon dioxide you breathe out, and the other 1.6 leave as water.</p>
+  </div>
+
+  <p>All of this makes only about four ATP directly. The real product is the loaded carriers.</p>
+
+  <p><b>Taking food apart sends its carbon out as CO2 and saves its electrons on carriers, ready to be cashed in.</b></p>
+
+  <p>Now the carriers are full. Where do they unload, and where does oxygen finally come in?</p>
+</section>
+<section class="part" id="part-7" aria-labelledby="part-7-title">
+  <h2 class="part-heading" id="part-7-title"><span class="part-eyebrow">Part 7</span>The proton dam</h2>
+  <p class="part-tagline"><em>Electrons tumble down a chain, pumping protons uphill. Oxygen catches them at the bottom.</em></p>
+
+  <p>A mitochondrion has two walls. The inner one is folded into many ridges and crowded with protein machines. This is where the loaded carriers unload.</p>
+
+  <p>Picture a reservoir behind a dam. Pumps lift water up into it. Later, the water rushes back down through a turbine, and the turbine does work. Mitochondria store energy the same way, but with <em>protons</em> instead of water. A proton is a hydrogen atom stripped of its electron.</p>
+
+  <p>NADH hands its electrons to the first of a row of large proteins set in the inner wall. The electrons hop from protein to protein, each hop a small step downhill, like a ball bouncing down a staircase. This row is called the <em>electron transport chain</em>.</p>
+
+  <p>Three of the proteins use the energy of those steps to pump protons. They move protons out of the mitochondrion's core, across the inner wall, into the narrow space between the two walls. For each NADH, about ten protons are pumped.</p>
+
+  <p>At the bottom of the staircase waits oxygen. The last protein in the chain hands four electrons to one oxygen molecule. The oxygen takes up four protons too, and becomes two molecules of water. <b>That is what the oxygen you breathe is for: it is the final catcher of spent electrons.</b></p>
+
+  <p>Drag the <b>Oxygen</b> slider under the next picture down to zero, and see what happens.</p>
+
+  <figure class="fig fig-pending" id="proton-dam" data-figure="7.1">
+  <div class="fig-art"><svg class="art" width="980" height="160" viewBox="0 0 980 160" role="img" aria-labelledby="proton-dam-alt"><text x="490" y="84" text-anchor="middle" class="t-small t-muted">Figure 7.1 is being drawn</text></svg></div>
+  <p class="sr-only" id="proton-dam-alt">A cross-section of a membrane holding a row of proteins. Electron pairs hop from protein to protein, stepping downhill, while protons are pushed up through three of the proteins and pile up above the membrane. At the end, an oxygen molecule takes the electrons and protons and becomes water. With the oxygen slider at zero, the electrons back up and the pumping stops.</p>
+</figure>
+
+  <div class="with-aside">
+    <aside class="aside" aria-label="What does cyanide do?">
+      <p class="aside-title"><span class="aside-label">More · </span>What does cyanide do?</p>
+      <p>Cyanide blocks the last protein in the chain, so electrons can't reach oxygen. Oxygen still arrives in the blood, but the cells can't use it.</p>
+    </aside>
+    <p>With no oxygen to take them, electrons pile up at the end of the chain. The hops stop, and so does the pumping. That is why a lack of oxygen is so quickly dangerous: without it, cells lose their main way to rebuild ATP.</p>
+  </div>
+
+  <p>Meanwhile the pumped protons crowd together on one side of the inner wall, which hardly lets them back through. Now the two sides differ in two ways. There are more protons on one side, and there is an electric voltage across the wall of about 150 to 180 millivolts. That is about a tenth of an AA battery, across a wall only a few billionths of a meter thick. Together, these make a push called the <em>proton-motive force</em>.</p>
+
+  <div class="with-aside">
+    <aside class="aside" aria-label="Why does this keep you warm?">
+      <p class="aside-title"><span class="aside-label">More · </span>Why does this keep you warm?</p>
+      <p>Some protons leak back across the wall without making ATP, and their energy becomes heat. In resting mammals, roughly a fifth of the oxygen the mitochondria use goes to covering this leak. Brown fat leaks on purpose: a protein called UCP1 opens a path for protons, turning food straight into heat.</p>
+    </aside>
+    <p>The British biochemist Peter Mitchell proposed this idea in 1961. It won him the Nobel Prize in Chemistry in 1978.</p>
+  </div>
+
+  <p><b>The energy in food's electrons is now stored as protons piled up behind a wall, like water behind a dam.</b></p>
+
+  <p>A dam is only useful if there is a turbine to let the water back through.</p>
+</section>
+<section class="part" id="part-8" aria-labelledby="part-8-title">
+  <h2 class="part-heading" id="part-8-title"><span class="part-eyebrow">Part 8</span>The spinning motor</h2>
+  <p class="part-tagline"><em>Protons flowing home spin a rotor, and every turn makes three ATP.</em></p>
+
+  <p>The protons crowded between the walls have one main way home: through a protein called <em>ATP synthase</em>. It is a motor, and it is the turbine in the dam.</p>
+
+  <p>Picture an old water mill. Water pours through the wheel and turns it, and the turning axle drives a millstone that grinds grain. ATP synthase has a wheel and an axle too, and a head that does the work. Unlike a millstone, the head builds instead of breaking.</p>
+
+  <p>In the inner wall sits a ring of small units, the <em>rotor</em>. A proton from the crowded side lands on one unit, rides with the ring almost a full turn, then steps off into the core. Each landing nudges the ring round one notch. In your mitochondria the ring has eight units, so eight protons turn it once.</p>
+
+  <p>The ring is fixed to a bent axle that pokes up into a round head. An arm on one side holds the head still, so the axle turns inside it. The head has three <em>active sites</em>, where ATP is made.</p>
+
+  <p>Drag the <b>Proton flow</b> slider under the next picture to start the motor, and keep your eye on one of the three sites.</p>
+
+  <figure class="fig fig-pending" id="atp-synthase" data-figure="8.1">
+  <div class="fig-art"><svg class="art" width="980" height="160" viewBox="0 0 980 160" role="img" aria-labelledby="atp-synthase-alt"><text x="490" y="84" text-anchor="middle" class="t-small t-muted">Figure 8.1 is being drawn</text></svg></div>
+  <p class="sr-only" id="atp-synthase-alt">A mushroom-shaped motor in a membrane. Protons pass through the ring in the membrane, turning it and a bent axle fixed to it. The axle turns inside a still head, and each of the head&#x27;s three sites in turn grabs ADP and phosphate, squeezes them into ATP, and lets the ATP go.</p>
+</figure>
+
+  <p>As the bent axle turns, it presses on each site in turn and changes its shape. One site grips ADP and phosphate. The next clamps down tight, and inside the tight pocket the two join into ATP. The third opens and lets a finished ATP go. Every site takes a turn at every job. <b>One full turn of the rotor makes three ATP.</b></p>
+
+  <p>There was a surprise in this. The American biochemist Paul Boyer found that joining ADP and phosphate isn't the hard part: in the tight pocket they join almost on their own. The turning's energy goes mainly into grabbing the pieces and prying the finished ATP loose. Later, the British scientist John Walker worked out the head's structure, atom by atom, and showed that Boyer was right. The two shared the 1997 Nobel Prize in Chemistry with Jens Skou of part 4.</p>
+
+  <div class="with-aside">
+    <aside class="aside" aria-label="Does all ATP come from here?">
+      <p class="aside-title"><span class="aside-label">More · </span>Does all ATP come from here?</p>
+      <p>Almost all of it, in a cell that is breathing. Only a few ATP per glucose come straight from taking food apart.</p>
+    </aside>
+    <p>In 1997 a team in Japan, led by Masasuke Yoshida and Kazuhiko Kinosita, watched the motor turn. Hiroyuki Noji and colleagues took the head of the motor from a heat-loving bacterium, fixed it to glass and attached a glowing protein strand to the axle, like a propeller. Then they fed the head ATP. Burning ATP, the motor ran backward, and under the microscope the strand spun round.</p>
+  </div>
+
+  <p>The real motor spins fast, about 100 turns a second. That is the pace of a car engine at 6,000 rpm.</p>
+
+  <div class="with-aside">
+    <aside class="aside" aria-label="The same motor everywhere?">
+      <p class="aside-title"><span class="aside-label">More · </span>The same motor everywhere?</p>
+      <p>Bacteria and plants have it too. In plants, sunlight powers the proton pumping, inside chloroplasts. The rotor ring varies: eight units in animals, and 9 to 15 in yeast, bacteria and chloroplasts. A bigger ring needs more protons per ATP.</p>
+    </aside>
+    <p>Now the math. Eight protons make three ATP, so each ATP costs about 2.7 protons. About one more proton pays to ship the new ATP out and bring ADP and phosphate in, for about 3.7 in all. An NADH pumps about ten protons, so by this count it is worth about 2.7 ATP. Measured values come out a little lower, near 2.5, partly because some protons leak back. Add up everything from one glucose, and you get about 30 to 32 ATP. Older textbooks say 36 to 38; better measurements brought the number down.</p>
+  </div>
+
+  <p><b>In part 3, a motor protein turned ATP into motion. Here a motor runs the other way: motion, driven by flowing protons, turns into new ATP.</b></p>
+
+  <p>We have now followed every piece of the loop. Time to run it all at once.</p>
+</section>
+<section class="part" id="part-9" aria-labelledby="part-9-title">
+  <h2 class="part-heading" id="part-9-title"><span class="part-eyebrow">Part 9</span>The whole cycle</h2>
+  <p class="part-tagline"><em>Food and air in; ATP made and spent; carbon dioxide and water out.</em></p>
+
+  <p>Follow a single phosphate around the loop.</p>
+
+  <p>It starts loose, near an ATP synthase deep in a mitochondrion. One of the motor's sites grips it beside an ADP, the axle turns, and the two join. The new ATP is pried loose and shipped out into the cell.</p>
+
+  <p>Moments later, that ATP drifts into a myosin head in a muscle. The head splits it and swings. The phosphate is loose again, and the ADP leaves too. Both make their way back to a mitochondrion, and the loop begins again.</p>
+
+  <p>This loop, ATP to ADP and back, is the <em>ATP–ADP cycle</em>. Press <b>Play</b> under the next picture to watch the whole chain that keeps it turning.</p>
+
+  <figure class="fig fig-pending" id="atp-cycle-recap" data-figure="9.1">
+  <div class="fig-art"><svg class="art" width="980" height="160" viewBox="0 0 980 160" role="img" aria-labelledby="atp-cycle-recap-alt"><text x="490" y="84" text-anchor="middle" class="t-small t-muted">Figure 9.1 is being drawn</text></svg></div>
+  <p class="sr-only" id="atp-cycle-recap-alt">A loop diagram of the whole system. Food and breath enter on the left. Food is taken apart, sending carbon dioxide out and loaded carriers on; the carriers feed a chain in a membrane that pumps protons and turns oxygen into water; the protons spin ATP synthase, which sends out ATP; ATP is spent by a muscle motor, a pump and a builder, and comes back as ADP and phosphate.</p>
+</figure>
+
+  <p>The chain runs like this:</p>
+
+  <ol class="steps">
+    <li>You breathe in oxygen and eat food.</li>
+    <li>Cells take the food apart. Its carbon leaves as CO2, and its electrons load onto carriers.</li>
+    <li>The carriers drop their electrons into the chain in the mitochondrion's inner wall. Each hop helps pump protons, and oxygen catches the electrons at the end, becoming water.</li>
+    <li>The protons flow back through ATP synthase, spinning its rotor and making ATP.</li>
+    <li>ATP is spent on motion, pumping, building and switching, and becomes ADP and phosphate.</li>
+    <li>The ADP and phosphate return to ATP synthase, and the loop repeats.</li>
+  </ol>
+
+  <p>The loop never stops. Your body holds little ATP at any moment, so each molecule is rebuilt again and again. Each day the total runs from about half your body weight to all of it, and far more when you work hard. One estimate found that a champion marathon runner remade about 60 kilograms of ATP during a single race of just over two hours.</p>
+
+  <p>Count the atoms, and nothing is lost. In go food and oxygen. Out come carbon dioxide, carrying the food's carbon, and water, made from the oxygen you breathed. The energy comes out as roughly 30 to 32 ATP for every glucose, plus a good deal of heat, which keeps you warm.</p>
+
+  <figure class="fig fig-pending" id="atom-ledger" data-figure="9.2">
+  <div class="fig-art"><svg class="art" width="700" height="160" viewBox="0 0 700 160" role="img" aria-labelledby="atom-ledger-alt"><text x="350" y="84" text-anchor="middle" class="t-small t-muted">Figure 9.2 is being drawn</text></svg></div>
+  <p class="sr-only" id="atom-ledger-alt">Bars to scale. Ten kilograms of fat and 29 of oxygen go in; 28 kilograms of carbon dioxide and 11 of water come out, so both sides weigh 39 kilograms.</p>
+</figure>
+
+  <p><b>Your cells keep ATP far from balance, like a ball held high on a hill. Food and oxygen carry it back up, and every pull, pump and build lets it roll back down.</b> That is how ATP powers you.</p>
+</section>
+
+  <footer class="colophon" aria-label="Colophon">
+    <h2>Credits</h2>
+    <p>The style, page design and figure controls are adapted from Martin C. Martin's <i>What Everyone Should Know About Mechanical Watches</i> (<a href="https://martincmartin.github.io/slidev-stem/watches/article/1/">live</a>, <a href="https://github.com/martincmartin/slidev-stem">source</a>; text and art <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code MIT), itself inspired by Bartosz Ciechanowski's <a href="https://ciechanow.ski/mechanical-watch/"><i>Mechanical Watch</i></a>. This page's text and drawings are CC BY 4.0 and its code is MIT: <a href="https://github.com/codeted323/how-atp-powers-you">source</a>. Fonts: Fraunces, IBM Plex Sans and IBM Plex Mono, under the SIL Open Font License.</p>
+    <h2>Sources</h2>
+    <p><b>Worked out here, not quoted.</b> "Tens to hundreds of millions of ADP for every ATP at equilibrium" (part 2) comes from the standard energy of about −30.5 kJ/mol, at 25–37 °C, with phosphate at 1–10 mM. That gives roughly 14 to 220 million ADP per ATP. "About a tenth of an AA battery" (part 7) is 150–180 mV against 1.5 V. "6,000 rpm" (part 8) is 100 turns a second × 60. "A ten-thousandth of a hair" (part 3) assumes a hair about 80 µm wide.</p>
+    <p><b>Where sources disagree, the text gives a range.</b> Daily ATP turnover: half a body weight (Nobel 1997) to one (Törnroth-Horsefield 2008). Pump share at rest: 19–28% (Rolfe &amp; Brown) to a third (Nobel 1997).</p>
+    <ul>
+        <li><a href="https://www.nobelprize.org/prizes/chemistry/1997/press-release/">Nobel Prize in Chemistry 1997, press release</a> <span class="src-parts">(parts 1, 4, 7, 8)</span></li>
+        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2604989/">Törnroth-Horsefield &amp; Neutze 2008, PNAS 105:19565</a> <span class="src-parts">(parts 1, 5, 9)</span></li>
+        <li><a href="https://bionumbers.hms.harvard.edu/bionumber.aspx?id=105606">BioNumbers 105606</a>, citing Buono &amp; Kolkhorst 2001, Adv Physiol Educ 25:70 <span class="src-parts">(part 9)</span></li>
+        <li><a href="https://en.wikipedia.org/wiki/ATP_hydrolysis">Wikipedia: ATP hydrolysis</a>, citing Lodish 2013 and Wackerhage et al. 1998, J Appl Physiol 85:2140 <span class="src-parts">(part 2)</span></li>
+        <li><a href="https://digfir-published.macmillanusa.com/tymoczko3e/tymoczko3e_ch15_4.html">Berg, Tymoczko et al., Biochemistry</a> <span class="src-parts">(parts 2, 4)</span></li>
+        <li><a href="https://bio.libretexts.org/Bookshelves/Biochemistry/Fundamentals_of_Biochemistry_(Jakubowski_and_Flatt)/02:_Unit_II-_Bioenergetics_and_Metabolism/12:_Bioenergetics_and_Biochemical_Reaction_Types/12.02:_Phosphoryl_Group_Transfers_and_ATP">Jakubowski &amp; Flatt, Phosphoryl group transfers and ATP (LibreTexts)</a> <span class="src-parts">(parts 2, 4)</span></li>
+        <li><a href="https://scilit.com/publications/1c77cbcf9f2fc6310790273b8456eaeb">Westheimer 1987, Science 235:1173</a>; <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7032660/">Kamerlin et al. 2013, Q Rev Biophys 46:1</a> <span class="src-parts">(part 1)</span></li>
+        <li><a href="https://ecampusontario.pressbooks.pub/bioc2580/chapter/atp-as-cellular-energy-currency/">BCcampus / eCampusOntario, ATP as cellular energy currency</a> <span class="src-parts">(part 1)</span></li>
+        <li><a href="https://www.nature.com/articles/41111">Schnitzer &amp; Block 1997, Nature 388:386</a> <span class="src-parts">(part 3)</span></li>
+        <li><a href="https://biophysics.org/blog/the-myosin-cross-bridge-cycle">Fenwick, Biophysical Society lay summary</a>; <a href="https://www.mhh.de/fileadmin/mhh/biophysikalische-chemie/downloads/geeves_fedorov_manstein_cmls_2005.pdf">Geeves et al. 2005, CMLS</a> <span class="src-parts">(part 3)</span></li>
+        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9347231/">Debold 2022</a>; <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12689349/">&quot;The order of things&quot; 2025</a> <span class="src-parts">(part 3)</span></li>
+        <li><a href="https://biomed-hwanglab.engr.tamu.edu/papers/2019/hwang_pnas19.pdf">Hwang &amp; Karplus 2019, PNAS</a>; <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2877326/">Astumian 2010, Biophys J 98:2401</a> <span class="src-parts">(part 3)</span></li>
+        <li><a href="https://www.britannica.com/science/rigor-mortis">Britannica: rigor mortis</a> <span class="src-parts">(part 3)</span></li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/9234964/">Rolfe &amp; Brown 1997, Physiol Rev 77:731</a> <span class="src-parts">(parts 4, 7)</span></li>
+        <li><a href="https://discovery.ucl.ac.uk/id/eprint/1466835/1/tjp6567.pdf">Engl &amp; Attwell 2015, J Physiol</a> <span class="src-parts">(part 4)</span></li>
+        <li><a href="https://nobelprize.org/laureate/289">Nobelprize.org: Jens C. Skou</a>; <a href="https://www.iucr.org/people/nobel-prize/skou">IUCr: Skou</a> <span class="src-parts">(part 4)</span></li>
+        <li><a href="https://bionumbers.hms.harvard.edu/bionumber.aspx?id=101476">Ochs et al. 2004, AJRCCM 169:120</a> <span class="src-parts">(part 5)</span></li>
+        <li><a href="https://med.libretexts.org/Courses/Virginia_Tech_Carilion_School_of_Medicine/Pulmonary_Physiology_for_Pre-Clinical_Students_(Binks)/16%3A_Gas_Transport/16.02%3A_CO_transport">OpenStax / LibreTexts: CO2 transport</a> <span class="src-parts">(part 5)</span></li>
+        <li><a href="https://sergiophyceae.github.io/assets/pdf/roger_etal_2017.pdf">Roger, Muñoz-Gómez &amp; Kamikawa 2017, Current Biology</a> <span class="src-parts">(part 5)</span></li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/25516540/">Meerman &amp; Brown 2014, BMJ 349:g7257</a>; <a href="https://www.unsw.edu.au/newsroom/news/2014/12/when-we-lose-weight--where-does-the-fat-go--">UNSW release</a> <span class="src-parts">(parts 6, 9)</span></li>
+        <li><a href="https://jove.com/science-education/11008">JoVE / OpenStax: ATP yield</a>; <a href="https://digfir-published.macmillanusa.com/berg8e/asset/img_ch18/berg8e_ch18_table_18_4.html">Berg table 18.4</a> <span class="src-parts">(parts 6, 8)</span></li>
+        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2947889/">Watt et al. 2010, PNAS 107:16823</a> <span class="src-parts">(parts 7, 8)</span></li>
+        <li><a href="https://www.nature.com/articles/386299a0">Noji et al. 1997, Nature 386:299</a> <span class="src-parts">(part 8)</span></li>
+        <li><a href="https://www.nature.com/articles/d41586-018-05880-w">Nature obituary of Paul Boyer, 2018</a>; <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC427120/">Boyer, Cross &amp; Momsen 1973, PNAS</a> <span class="src-parts">(part 8)</span></li>
+        <li><a href="https://www.ncbi.nlm.nih.gov/mesh/68053078">NLM MeSH: Membrane Potential, Mitochondrial</a> <span class="src-parts">(part 7)</span></li>
+        <li><a href="https://www.wikiwand.com/en/articles/Complex_IV">Cytochrome c oxidase (Complex IV)</a> <span class="src-parts">(part 7)</span></li>
+        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3640847/">Uncoupling proteins review (PMC3640847)</a> <span class="src-parts">(part 7)</span></li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/1842855/">Skeletal muscle energy in intense exercise, Sci Prog 1991</a> <span class="src-parts">(parts 1, 6)</span></li>
+        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8991011">Review on the discovery of ATP (PMC8991011)</a> <span class="src-parts">(part 1)</span></li>
+        <li><a href="https://www.nature.com/articles/s42255-020-0251-4">Hargreaves &amp; Spriet 2020, Nature Metabolism</a> <span class="src-parts">(parts 1, 3)</span></li>
+        <li><a href="https://bionumbers.hms.harvard.edu/bionumber.aspx?id=101943">BioNumbers 101943, citing Wackerhage et al. 1998, table 1</a> <span class="src-parts">(part 2)</span></li>
+        <li><a href="https://ui.adsabs.harvard.edu/abs/2004Sci...303..676Y/abstract">Yildiz et al. 2004, Science 303:676</a> <span class="src-parts">(part 3)</span></li>
+        <li><a href="https://physicstoday.aip.org/features/brownian-motors">Astumian &amp; Hänggi 2002, Physics Today</a> <span class="src-parts">(part 3)</span></li>
+        <li><a href="https://openstax.org/books/biology/pages/39-4-transport-of-gases-in-human-bodily-fluids">OpenStax Biology 39.4: Transport of gases</a> <span class="src-parts">(part 5)</span></li>
+        <li><a href="https://www.infona.pl/resource/bwmeta1.element.elsevier-e8a367ac-2da0-3beb-b477-d1645fa9e87a">Hinkle 2005, Biochim Biophys Acta</a> <span class="src-parts">(parts 6, 8)</span></li>
+        <li><a href="https://www.ebi.ac.uk/pdbsum/8h9f">Lai et al. 2023, Mol Cell 83:2137 (PDB 8H9F)</a> <span class="src-parts">(part 8)</span></li>
+        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4640650">Preiss et al. 2015, Sci Adv 1:e1500106</a> <span class="src-parts">(part 8)</span></li>
+        <li><a href="https://life.scnu.edu.cn/biology/jpkc/xbswx/ckwx/5/Direct%20Observation%20of%20the%20Rotation%20of%20e%20Subunit%20in%20F1-ATPase.pdf">Kato-Yamada et al. 1998, J Biol Chem</a>; <a href="https://kaken.nii.ac.jp/en/grant/KAKENHI-PROJECT-07458158">KAKEN report</a> <span class="src-parts">(part 8)</span></li>
+    </ul>
+  </footer>
+</article>
+</main>
+<script type="module">
+import { initPage, lazy } from "./assets/js/figure.js";
+import { mount as atpMolecule } from "./figures/atp-molecule.js";
+atpMolecule(document.getElementById("atp-molecule"));
+
+initPage();
+</script>
 </body>
 </html>

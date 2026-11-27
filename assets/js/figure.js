@@ -169,6 +169,47 @@ function setPagePaused(paused) {
   }
 }
 
+/** Loads a figure's module only when it comes near the screen (WebGL). */
+export function lazy(id, load) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const io = new IntersectionObserver(
+    (entries) => {
+      if (!entries.some((e) => e.isIntersecting)) return;
+      io.disconnect();
+      load().then((m) => m.mount(el));
+    },
+    { rootMargin: "800px 0px" },
+  );
+  io.observe(el);
+}
+
+/** Marks the part being read in the contents. */
+function trackContents(contents) {
+  const links = [...contents.querySelectorAll('a[href^="#part-"]')];
+  const sections = links.map((a) => document.querySelector(a.getAttribute("href")));
+  const update = () => {
+    let cur = 0;
+    sections.forEach((s, i) => {
+      if (s && s.getBoundingClientRect().top < window.innerHeight * 0.4) cur = i;
+    });
+    links.forEach((a, i) => {
+      if (i === cur) a.setAttribute("aria-current", "true");
+      else a.removeAttribute("aria-current");
+    });
+  };
+  window.addEventListener("scroll", update, { passive: true });
+  update();
+  // on a phone the list closes once a part is chosen
+  contents.addEventListener("click", (e) => {
+    if (e.target.closest("a")) {
+      contents.classList.remove("is-open");
+      const t = contents.querySelector(".contents-toggle");
+      if (t) t.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
 /** Wires the page: "pause all", the contents button, the figures' loop. */
 export function initPage() {
   document.documentElement.classList.add("js");
@@ -184,6 +225,7 @@ export function initPage() {
       toggle.setAttribute("aria-expanded", String(open));
     });
   }
+  if (contents) trackContents(contents);
   document.addEventListener("visibilitychange", () => {
     last = 0;
   });

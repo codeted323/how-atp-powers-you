@@ -101,7 +101,7 @@ def check_page(path):
         if len(text) < 20:
             bad(p.path, f"#{fig}: alt text #{lb} is missing or too short")
     for fig in p.figs:
-        if fig and fig not in p.figs_with_svg and "canvas" not in path.read_text():
+        if fig and fig not in p.figs_with_svg:
             bad(p.path, f"#{fig}: no svg.art")
 
 
@@ -132,7 +132,7 @@ def check_css():
             bad("site.css", f"stroke-width {m.group(1)}px is off the ladder")
 
 
-for html in sorted(ROOT.glob("article/*/index.html")) + [ROOT / "marks/index.html"]:
+for html in [ROOT / "index.html", ROOT / "marks/index.html"]:
     if html.exists():
         check_page(html)
 for js in sorted((ROOT / "figures").glob("*.js")) + [ROOT / "assets/js/marks.js"]:

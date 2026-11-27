@@ -2,8 +2,8 @@
 
 An interactive explainer in nine parts: what ATP is, what kind of energy it
 holds, how it makes things move, and how the air you breathe and the food you
-eat rebuild it. One page per part, at `article/1/` … `article/9/`, with live
-line drawings between the paragraphs.
+eat rebuild it. One long page with all nine parts (`index.html`, anchors
+`#part-1` … `#part-9`), with live line drawings between the paragraphs.
 
 Live: https://codeted323.github.io/how-atp-powers-you/
 
@@ -13,7 +13,7 @@ Plain HTML, CSS and JavaScript modules. No build step, no framework, no CDN:
 GitHub Pages serves the files as they are.
 
 ```
-article/N/index.html   one part per page; its text, its inline SVG figures
+index.html             the whole explainer: all nine parts and their figures
 assets/css/site.css    the palette (--palette-*), type, layout, controls
 assets/js/figure.js    the figures' clock, "pause all", Pause, steps, flash
 assets/js/marks.js     shared marks: flow (particles), energy burst, ATP
@@ -23,7 +23,7 @@ tools/check.py         checks the drawing rules (run before each commit)
 ```
 
 To preview: `python3 -m http.server` in this folder, then open
-http://localhost:8000/article/1/.
+http://localhost:8000/.
 
 Run `python3 tools/check.py` before committing. It checks that every SVG id
 starts with its figure's name, that strokes come only from the 2 / 2.5 / 3 /
