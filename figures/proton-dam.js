@@ -3,7 +3,8 @@
 // above, Core of the mitochondrion below. Three pumping proteins (subject
 // faces) sit in the wall, linked by two small mobile shuttles (context):
 // one in the wall, one on its outer face. (The fourth, non-pumping complex
-// is left out.) Electrons (a pair of dots, flow at 1.0) hop left to right
+// is left out.) Electrons (a pair of dots, flow at 1.0; across the outer
+// shuttle, one at a time) hop left to right
 // down a faint staircase guide (ink at 0.5) drawn just under the wall, a
 // step beneath each protein and shuttle. At each pumping protein, protons
 // (plus-signed circles, flow at 0.7) pass up through the wall and pile up
@@ -100,6 +101,11 @@ export function mount(fig) {
   const risers = Array.from({ length: RISERS }, (_, i) => particle(world, "h", { id: `${P}-rise-${i + 1}`, upright: true }));
   const PAIRS = 6;
   const pairs = Array.from({ length: PAIRS }, (_, i) => particle(world, "e2", { id: `${P}-pair-${i + 1}`, upright: true }));
+  // the outer shuttle carries one electron at a time (approved by Ted,
+  // 2026-11-27): across it, a pair travels as two singles, one after the other
+  const singles = Array.from({ length: PAIRS }, (_, i) =>
+    [0, 1].map((j) => particle(world, "e", { id: `${P}-pair-${i + 1}-e${j + 1}`, upright: true })),
+  );
   const o2 = particle(world, "o2", { id: `${P}-o2` });
   const water = [0, 1].map((i) => particle(world, "h2o", { id: `${P}-water-${i + 1}`, upright: true }));
 
@@ -199,8 +205,23 @@ export function mount(fig) {
     // pairs on the stairs, hopping
     sim.pairs.forEach((q, i) => {
       const m = pairs[i];
-      m.g.style.display = q.live ? "" : "none";
+      const [s1, s2] = singles[i];
+      const single = q.live && q.p >= 3 && q.p < END; // the hops into and out of the outer shuttle
+      m.g.style.display = q.live && !single ? "" : "none";
+      s1.g.style.display = single ? "" : "none";
+      s2.g.style.display = single ? "" : "none";
       if (!q.live) return;
+      if (single) {
+        const k = Math.floor(q.p);
+        const a = STOPS[k];
+        const b = STOPS[Math.min(END, k + 1)];
+        [[s1, ease(q.p - k, 0.1, 0.55), -7], [s2, ease(q.p - k, 0.55, 1), 7]].forEach(([e, f, dx]) => {
+          const x = lerp(a.x, b.x, f) + (f <= 0 ? dx : f >= 1 ? -dx : 0);
+          const y = lerp(a.y, b.y, f) - 12 - Math.sin(f * Math.PI) * 26;
+          e.place(x, y, 0, f > 0.02 && f < 0.98);
+        });
+        return;
+      }
       const k = Math.floor(q.p);
       const f = ease(q.p - k, 0.2, 1);
       const a = STOPS[Math.max(0, Math.min(END, k))];
