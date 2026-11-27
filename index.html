@@ -357,9 +357,12 @@
 
   <p>Drag the <b>Oxygen</b> slider under the next picture down to zero, and see what happens.</p>
 
-  <figure class="fig fig-pending" id="proton-dam" data-figure="7.1">
-  <div class="fig-art"><svg class="art" width="980" height="160" viewBox="0 0 980 160" role="img" aria-labelledby="proton-dam-alt"><text x="490" y="84" text-anchor="middle" class="t-small t-muted">Figure 7.1 is being drawn</text></svg></div>
+  <figure class="fig" id="proton-dam" data-figure="7.1">
+  <div class="fig-art"><svg class="art" width="980" height="480" viewBox="0 0 980 480" role="img" aria-labelledby="proton-dam-alt"></svg></div>
   <p class="sr-only" id="proton-dam-alt">A cross-section of a membrane holding a row of proteins. Electron pairs hop from protein to protein, stepping downhill, while protons are pushed up through three of the proteins and pile up above the membrane. At the end, an oxygen molecule takes the electrons and protons and becomes water. With the oxygen slider at zero, the electrons back up and the pumping stops.</p>
+  <p class="sr-only" id="proton-dam-status" aria-live="polite"></p>
+  <noscript><p class="fig-caption">This figure needs JavaScript. It shows: A cross-section of a membrane holding a row of proteins. Electron pairs hop from protein to protein, stepping downhill, while protons are pushed up through three of the proteins and pile up above the membrane. At the end, an oxygen molecule takes the electrons and protons and becomes water. With the oxygen slider at zero, the electrons back up and the pumping stops.</p></noscript>
+  <div class="fig-controls"><div class="slider"><label class="slider-label" for="proton-dam-oxygen">Oxygen</label><div class="slider-row"><span aria-hidden="true">0%</span><input type="range" id="proton-dam-oxygen" min="0" max="100" step="1" value="100" aria-valuetext="100 percent"><span aria-hidden="true">100%</span></div></div><button type="button" class="btn btn-swap" data-pause aria-pressed="false" aria-label="Pause this figure"><span>Play</span><span>Pause</span></button></div>
 </figure>
 
   <div class="with-aside">
@@ -538,6 +541,8 @@ import { mount as breathPath } from "./figures/breath-path.js";
 breathPath(document.getElementById("breath-path"));
 import { mount as glucoseApart } from "./figures/glucose-apart.js";
 glucoseApart(document.getElementById("glucose-apart"));
+import { mount as protonDam } from "./figures/proton-dam.js";
+protonDam(document.getElementById("proton-dam"));
 
 initPage();
 </script>
