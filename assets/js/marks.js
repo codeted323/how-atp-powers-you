@@ -86,6 +86,21 @@ const KINDS = {
       el("path", { d: "M-5 0H5M0 -5V5", class: `${line} w25` }, g);
     },
   },
+  // ions, told apart by shape: sodium an open circle, potassium a solid square
+  na: {
+    back: 11,
+    tone: "o85",
+    draw(g, line) {
+      circle(g, 0, 0, 9, `${line} w25`);
+    },
+  },
+  k: {
+    back: 10,
+    tone: "o85",
+    draw(g, line, dot) {
+      el("rect", { x: -7.5, y: -7.5, width: 15, height: 15, class: dot }, g);
+    },
+  },
   h2o: {
     back: 12,
     tone: "o85",
@@ -99,7 +114,7 @@ const KINDS = {
 
 /**
  * Makes a moving particle in `parent`.
- * @param {string} kind o2 | co2 | hco3 | e | e2 | h | h2o
+ * @param {string} kind o2 | co2 | hco3 | e | e2 | h | na | k | h2o
  * @param {object} o  role: "flow" (default) or "muted" for context
  *                    (water that only takes part), id: prefixed id,
  *                    upright: the molecule doesn't turn with its heading,

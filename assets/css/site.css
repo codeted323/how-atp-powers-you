@@ -381,6 +381,7 @@ h2.part-heading {
 
 /* ---------- Figures ---------- */
 .fig {
+  clear: both;
   position: relative;
   width: min(var(--figure-max), 100vw - 2 * var(--gutter));
   margin: 1.6em 0 1.8em calc((100% - min(var(--figure-max), 100vw - 2 * var(--gutter))) / 2);
@@ -658,4 +659,7 @@ svg.art.zoom text {
   .fig-counter {
     font-size: 0.75em;
   }
+}
+svg.art.zoom-s text {
+  font-size: 20px;
 }

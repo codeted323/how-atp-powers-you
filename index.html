@@ -197,9 +197,12 @@
 
   <p>Watch the pump in the next picture. Press <b>Play</b> and follow the orange phosphate.</p>
 
-  <figure class="fig fig-pending" id="sodium-pump" data-figure="4.1">
-  <div class="fig-art"><svg class="art" width="900" height="160" viewBox="0 0 900 160" role="img" aria-labelledby="sodium-pump-alt"><text x="450" y="84" text-anchor="middle" class="t-small t-muted">Figure 4.1 is being drawn</text></svg></div>
+  <figure class="fig" id="sodium-pump" data-figure="4.1">
+  <div class="fig-art"><svg class="art" width="900" height="420" viewBox="0 0 900 420" role="img" aria-labelledby="sodium-pump-alt"></svg></div>
   <p class="sr-only" id="sodium-pump-alt">A pump spanning a cell&#x27;s skin. Three sodium ions enter it from inside; an ATP hands it a phosphate, and the pump flips open to the outside and lets the sodium go. Two potassium ions enter, the phosphate drops off, and the pump flips back to release them inside.</p>
+  <p class="sr-only" id="sodium-pump-status" aria-live="polite"></p>
+  <noscript><p class="fig-caption">This figure needs JavaScript. It shows: A pump spanning a cell&#x27;s skin. Three sodium ions enter it from inside; an ATP hands it a phosphate, and the pump flips open to the outside and lets the sodium go. Two potassium ions enter, the phosphate drops off, and the pump flips back to release them inside.</p></noscript>
+  <div class="fig-controls"><button type="button" class="btn btn-swap" data-pause aria-pressed="false" aria-label="Pause this figure"><span>Play</span><span>Pause</span></button></div>
 </figure>
 
   <p>The pump grabs an ATP and moves its end phosphate onto itself. That added phosphate flips the pump's shape, so its pocket opens to the outside and lets the sodium go. Potassium climbs in from outside. Then the phosphate drops off, the pump flips back, and it lets the potassium go inside.</p>
@@ -212,9 +215,12 @@
 
   <p>Picture two buckets on one rope over a pulley. On its own, a light bucket never rises. Tie it to a heavier one that is falling, and up it goes. Press <b>Tie the rope</b> under the next picture.</p>
 
-  <figure class="fig fig-pending" id="coupled-buckets" data-figure="4.2">
-  <div class="fig-art"><svg class="art" width="700" height="160" viewBox="0 0 700 160" role="img" aria-labelledby="coupled-buckets-alt"><text x="350" y="84" text-anchor="middle" class="t-small t-muted">Figure 4.2 is being drawn</text></svg></div>
+  <figure class="fig" id="coupled-buckets" data-figure="4.2">
+  <div class="fig-art"><svg class="art" width="700" height="460" viewBox="0 0 700 460" role="img" aria-labelledby="coupled-buckets-alt"></svg></div>
   <p class="sr-only" id="coupled-buckets-alt">Two buckets beside a pulley. Untied, the light bucket stays on the floor. Once a rope joins them, the heavy bucket marked ATP to ADP drops and hauls the light bucket, marked uphill job, up into the air.</p>
+  <p class="sr-only" id="coupled-buckets-status" aria-live="polite"></p>
+  <noscript><p class="fig-caption">This figure needs JavaScript. It shows: Two buckets beside a pulley. Untied, the light bucket stays on the floor. Once a rope joins them, the heavy bucket marked ATP to ADP drops and hauls the light bucket, marked uphill job, up into the air.</p></noscript>
+  <div class="fig-controls"><button type="button" class="btn btn-action" id="coupled-buckets-tie">Tie the rope</button><button type="button" class="btn" id="coupled-buckets-reset">Reset</button></div>
 </figure>
 
   <p>In chemistry, the rope is usually a hand-off. ATP passes its end phosphate, or a larger piece of itself, to a building block. The tagged block is now eager to react, so the next step runs downhill. This trick is called <em>coupling</em>. Adding a single amino acid to a growing protein costs about four ATPs' worth of energy.</p>
@@ -227,9 +233,11 @@
     <p>ATP also flips switches. Enzymes called <em>kinases</em> move a phosphate from ATP onto other proteins, turning them on or off. Many messages inside a cell, such as the signal from a hormone, are passed along this way.</p>
   </div>
 
-  <figure class="fig fig-pending" id="atp-budget" data-figure="4.3">
-  <div class="fig-art"><svg class="art" width="700" height="160" viewBox="0 0 700 160" role="img" aria-labelledby="atp-budget-alt"><text x="350" y="84" text-anchor="middle" class="t-small t-muted">Figure 4.3 is being drawn</text></svg></div>
+  <figure class="fig" id="atp-budget" data-figure="4.3">
+  <div class="fig-art"><svg class="art" width="700" height="300" viewBox="0 0 700 300" role="img" aria-labelledby="atp-budget-alt"></svg></div>
   <p class="sr-only" id="atp-budget-alt">Five horizontal range bars, one per job, for resting mammals: building proteins 25 to 30 percent, the sodium–potassium pump 19 to 28, calcium pumps 4 to 8, muscle myosin 2 to 8, and making new glucose 7 to 10.</p>
+  <p class="sr-only" id="atp-budget-status" aria-live="polite"></p>
+  <noscript><p class="fig-caption">This figure needs JavaScript. It shows: Five horizontal range bars, one per job, for resting mammals: building proteins 25 to 30 percent, the sodium–potassium pump 19 to 28, calcium pumps 4 to 8, muscle myosin 2 to 8, and making new glucose 7 to 10.</p></noscript>
 </figure>
 
   <p>In every case, ATP is not burned like fuel in a fire. Its breakdown is tied, step by step, to a job: it changes a protein's shape, or it tags a molecule. If the tie slips, the energy is simply lost as heat.</p>
@@ -513,6 +521,12 @@ import { mount as myosinRow } from "./figures/myosin-row.js";
 myosinRow(document.getElementById("myosin-row"));
 import { mount as kinesinWalk } from "./figures/kinesin-walk.js";
 kinesinWalk(document.getElementById("kinesin-walk"));
+import { mount as sodiumPump } from "./figures/sodium-pump.js";
+sodiumPump(document.getElementById("sodium-pump"));
+import { mount as coupledBuckets } from "./figures/coupled-buckets.js";
+coupledBuckets(document.getElementById("coupled-buckets"));
+import { mount as atpBudget } from "./figures/atp-budget.js";
+atpBudget(document.getElementById("atp-budget"));
 
 initPage();
 </script>
