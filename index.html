@@ -266,9 +266,12 @@
 
   <p>Press <b>Breathe</b> under the next picture. Follow one oxygen molecule all the way in, then one carbon dioxide molecule all the way out.</p>
 
-  <figure class="fig fig-pending" id="breath-path" data-figure="5.1">
-  <div class="fig-art"><svg class="art" width="980" height="160" viewBox="0 0 980 160" role="img" aria-labelledby="breath-path-alt"><text x="490" y="84" text-anchor="middle" class="t-small t-muted">Figure 5.1 is being drawn</text></svg></div>
+  <figure class="fig" id="breath-path" data-figure="5.1">
+  <div class="fig-art"><svg class="art" width="980" height="360" viewBox="0 0 980 360" role="img" aria-labelledby="breath-path-alt"></svg></div>
   <p class="sr-only" id="breath-path-alt">A strip from a lung&#x27;s air sac to a body cell. An oxygen molecule crosses into the blood, rides a four-seat hemoglobin to the far end, drifts into a cell and reaches a mitochondrion. A carbon dioxide molecule makes the reverse trip, dissolved in the blood for most of the way, and leaves through the air sac.</p>
+  <p class="sr-only" id="breath-path-status" aria-live="polite"></p>
+  <noscript><p class="fig-caption">This figure needs JavaScript. It shows: A strip from a lung&#x27;s air sac to a body cell. An oxygen molecule crosses into the blood, rides a four-seat hemoglobin to the far end, drifts into a cell and reaches a mitochondrion. A carbon dioxide molecule makes the reverse trip, dissolved in the blood for most of the way, and leaves through the air sac.</p></noscript>
+  <div class="fig-controls"><button type="button" class="btn btn-action" id="breath-path-breathe">Breathe</button><button type="button" class="btn btn-swap" data-pause aria-pressed="false" aria-label="Pause this figure"><span>Play</span><span>Pause</span></button></div>
 </figure>
 
   <div class="with-aside">
@@ -527,6 +530,8 @@ import { mount as coupledBuckets } from "./figures/coupled-buckets.js";
 coupledBuckets(document.getElementById("coupled-buckets"));
 import { mount as atpBudget } from "./figures/atp-budget.js";
 atpBudget(document.getElementById("atp-budget"));
+import { mount as breathPath } from "./figures/breath-path.js";
+breathPath(document.getElementById("breath-path"));
 
 initPage();
 </script>
