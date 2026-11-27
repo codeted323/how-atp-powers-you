@@ -300,9 +300,13 @@
 
   <p>Press <b>Step</b> under the next picture to take one glucose apart.</p>
 
-  <figure class="fig fig-pending" id="glucose-apart" data-figure="6.1">
-  <div class="fig-art"><svg class="art" width="980" height="160" viewBox="0 0 980 160" role="img" aria-labelledby="glucose-apart-alt"><text x="490" y="84" text-anchor="middle" class="t-small t-muted">Figure 6.1 is being drawn</text></svg></div>
+  <figure class="fig" id="glucose-apart" data-figure="6.1">
+  <div class="fig-art"><svg class="art" width="980" height="460" viewBox="0 0 980 460" role="img" aria-labelledby="glucose-apart-alt"></svg></div>
   <p class="sr-only" id="glucose-apart-alt">A chain of six carbon beads splits in two. The halves move into a mitochondrion, where each drops one bead as carbon dioxide and then rides a circular loop, dropping two more. Along the way, small carrier shuttles fill up with electrons. At the end no carbon is left, six carbon dioxide molecules have drifted off, and twelve carriers are full.</p>
+  <p class="fig-counter counter" id="glucose-apart-counter" aria-live="off"></p>
+  <p class="sr-only" id="glucose-apart-status" aria-live="polite"></p>
+  <noscript><p class="fig-caption">This figure needs JavaScript. It shows: A chain of six carbon beads splits in two. The halves move into a mitochondrion, where each drops one bead as carbon dioxide and then rides a circular loop, dropping two more. Along the way, small carrier shuttles fill up with electrons. At the end no carbon is left, six carbon dioxide molecules have drifted off, and twelve carriers are full.</p></noscript>
+  <div class="fig-controls"><button type="button" class="btn btn-swap" data-pause aria-pressed="false" aria-label="Pause this figure"><span>Play</span><span>Pause</span></button><button type="button" class="btn btn-action" id="glucose-apart-step">Step</button></div>
 </figure>
 
   <div class="with-aside">
@@ -532,6 +536,8 @@ import { mount as atpBudget } from "./figures/atp-budget.js";
 atpBudget(document.getElementById("atp-budget"));
 import { mount as breathPath } from "./figures/breath-path.js";
 breathPath(document.getElementById("breath-path"));
+import { mount as glucoseApart } from "./figures/glucose-apart.js";
+glucoseApart(document.getElementById("glucose-apart"));
 
 initPage();
 </script>
