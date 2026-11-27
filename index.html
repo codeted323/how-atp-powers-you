@@ -103,9 +103,12 @@
 
   <p>Drag the slider under the next picture from <b>Balance</b> toward <b>Living cell</b>, and watch how much energy each ATP has to offer.</p>
 
-  <figure class="fig fig-pending" id="atp-hill" data-figure="2.1">
-  <div class="fig-art"><svg class="art" width="900" height="160" viewBox="0 0 900 160" role="img" aria-labelledby="atp-hill-alt"><text x="450" y="84" text-anchor="middle" class="t-small t-muted">Figure 2.1 is being drawn</text></svg></div>
+  <figure class="fig" id="atp-hill" data-figure="2.1">
+  <div class="fig-art"><svg class="art" width="900" height="420" viewBox="0 0 900 420" role="img" aria-labelledby="atp-hill-alt"></svg></div>
   <p class="sr-only" id="atp-hill-alt">A hill with a ball labeled ATP. A bracket from the bottom of the hill to the ball shows the energy on offer. At Balance the ball is at the bottom; at Lab standard it is partway up; at Living cell it is nearly twice as high.</p>
+  <p class="sr-only" id="atp-hill-status" aria-live="polite"></p>
+  <noscript><p class="fig-caption">This figure needs JavaScript. It shows: A hill with a ball labeled ATP. A bracket from the bottom of the hill to the ball shows the energy on offer. At Balance the ball is at the bottom; at Lab standard it is partway up; at Living cell it is nearly twice as high.</p></noscript>
+  <div class="fig-controls"><div class="slider"><label class="slider-label" for="atp-hill-mix">ATP-to-ADP mix</label><div class="slider-row"><span aria-hidden="true">Balance</span><input type="range" id="atp-hill-mix" min="0" max="100" step="1" value="0" aria-valuetext="Balance: no energy on offer"><span aria-hidden="true">Living cell</span></div></div><button type="button" class="btn btn-swap" data-pause aria-pressed="false" aria-label="Pause this figure"><span>Play</span><span>Pause</span></button></div>
 </figure>
 
   <div class="with-aside">
@@ -497,6 +500,8 @@
 import { initPage, lazy } from "./assets/js/figure.js";
 import { mount as atpMolecule } from "./figures/atp-molecule.js";
 atpMolecule(document.getElementById("atp-molecule"));
+import { mount as atpHill } from "./figures/atp-hill.js";
+atpHill(document.getElementById("atp-hill"));
 
 initPage();
 </script>

@@ -43,8 +43,13 @@ class Page(HTMLParser):
         self.figs_with_svg = set()
         self.figs = []
 
+    VOID = {"input", "br", "img", "meta", "link", "hr", "source", "col", "wbr"}
+
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
+        if tag in self.VOID:
+            self.check_attrs(tag, a)
+            return
         self.depth += 1
         if tag == "figure" and "fig" in (a.get("class") or "").split():
             self.fig = a.get("id")
@@ -63,6 +68,11 @@ class Page(HTMLParser):
                     bad(self.path, f"#{self.fig}: svg.art has no alt text")
                 if lb:
                     self.labels.append((self.fig, lb))
+        self.check_attrs(tag, a)
+        if "id" in a:
+            self.cur_ids.append([a["id"], self.depth, ""])
+
+    def check_attrs(self, tag, a):
         if self.fig and "id" in a and a["id"] != self.fig:
             if not a["id"].startswith(self.fig + "-"):
                 bad(self.path, f"#{self.fig}: id '{a['id']}' lacks the figure's prefix")
@@ -74,8 +84,6 @@ class Page(HTMLParser):
                     bad(self.path, f"<{tag}> has a raw {k} color {a[k]}")
             if COLOR.search(a.get("style") or ""):
                 bad(self.path, f"<{tag}> has a raw color in style")
-        if "id" in a:
-            self.cur_ids.append([a["id"], self.depth, ""])
 
     def handle_endtag(self, tag):
         for entry in self.cur_ids:
