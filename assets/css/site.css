@@ -1,0 +1,577 @@
+/* How ATP Powers You: the page and the figures' shared classes.
+   The Explainer Style system (Ledger palette, "Line, weighted" art, the
+   article page), adapted from Martin C. Martin's slidev-stem (MIT code,
+   CC BY 4.0 content). Every color is set here, and only here. */
+
+/* ---------- Fonts (self-hosted, SIL Open Font License) ---------- */
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/fraunces-latin-opsz.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-sans-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-sans-latin-400-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-sans-latin-500-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-sans-latin-600-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-mono-latin-600-normal.woff2") format("woff2");
+}
+
+/* ---------- The palette (Ledger) ---------- */
+:root {
+  --palette-paper: #faf7f0;
+  --palette-background: var(--palette-paper);
+  --palette-panel: #f2eee4;
+  --palette-border: #e0d9ca;
+  --palette-ink: #2a2520;
+  --palette-muted: #736a60;
+  --palette-accent: #1f5fa8;
+  --palette-second: #b5601e;
+  --palette-subject: #143c6b;
+  --palette-subject-wash: #d3dce3;
+  --palette-muted-wash: #e2ded6;
+  --palette-second-wash: #ecd8c4;
+  --palette-water: #30527b;
+  --palette-water-wash: #7087a0;
+  --palette-ground: var(--palette-muted);
+  --palette-ground-wash: var(--palette-muted-wash);
+  /* NEW ROLE. A particle in transit: a molecule, an electron, a proton.
+     Its own name so it can be retuned in one place; today it is the
+     subject's navy, drawn as an open line at 0.85 with a direction tail.
+     See marks/ for the mark itself. */
+  --palette-flow: #143c6b;
+
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --column: 700px;
+  --figure-max: 980px;
+  --gutter: 24px;
+}
+@media (max-width: 600px) {
+  :root {
+    --gutter: 18px;
+  }
+}
+
+/* ---------- Page ---------- */
+html {
+  background: var(--palette-paper);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--palette-paper);
+  color: var(--palette-ink);
+  font-family: var(--font-sans);
+  font-size: 20px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+.page {
+  padding: 56px var(--gutter) 120px;
+}
+.column {
+  max-width: var(--column);
+  margin: 0 auto;
+}
+a {
+  color: var(--palette-ink);
+  text-underline-offset: 0.15em;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible,
+.fig-drag:focus-visible {
+  outline: 2px solid var(--palette-accent);
+  outline-offset: 2px;
+}
+p {
+  margin: 0 0 1em;
+}
+em,
+i {
+  font-style: italic;
+}
+strong,
+b,
+.takeaway {
+  font-weight: 500;
+}
+.num {
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* The header, top to bottom */
+.eyebrow {
+  margin: 0 0 0.5em;
+  font-size: 0.8em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--palette-muted);
+}
+.eyebrow a {
+  color: inherit;
+  text-decoration: none;
+}
+.eyebrow a:hover {
+  text-decoration: underline;
+}
+h1.title {
+  margin: 0 0 0.25em;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 2.4em;
+  line-height: 1.15;
+  font-variation-settings: "opsz" 72;
+}
+.subtitle {
+  margin: 0 0 0.6em;
+  font-size: 1.35em;
+  font-style: italic;
+  line-height: 1.25;
+}
+.byline {
+  margin: 0;
+  color: var(--palette-muted);
+}
+.motion-note {
+  margin: 0.4em 0 1.6em;
+  font-size: 0.85em;
+  color: var(--palette-muted);
+}
+.link-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  cursor: pointer;
+}
+h2.part-heading {
+  margin: 2.4em 0 0.6em;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.9em;
+  line-height: 1.2;
+  font-variation-settings: "opsz" 48;
+}
+
+/* Contents: in the left margin on a wide screen, behind a button on a phone */
+.contents {
+  margin: 0 0 2em;
+  font-size: 0.85em;
+  line-height: 1.45;
+}
+.contents-toggle {
+  padding: 0.2em 0.8em;
+  border: 1px solid var(--palette-border);
+  border-radius: 999px;
+  background: var(--palette-panel);
+  color: var(--palette-ink);
+  font: inherit;
+  cursor: pointer;
+}
+.contents-title {
+  margin: 0 0 0.3em;
+  color: var(--palette-muted);
+}
+.contents ol {
+  margin: 0.6em 0 0;
+  padding-left: 1.6em;
+}
+.contents li {
+  margin: 0 0 0.2em;
+}
+.contents [aria-current="page"] {
+  font-weight: 600;
+}
+.js .contents:not(.is-open) ol {
+  display: none;
+}
+.contents .contents-title {
+  display: none;
+}
+@media (min-width: 1280px) {
+  .contents {
+    position: absolute;
+    top: 56px;
+    left: max(var(--gutter), calc(50% - var(--column) / 2 - 270px));
+    width: 220px;
+    margin: 0;
+  }
+  .contents-toggle {
+    display: none;
+  }
+  .contents .contents-title {
+    display: block;
+  }
+  .js .contents:not(.is-open) ol,
+  .contents ol {
+    display: block;
+    margin: 0;
+  }
+}
+
+/* Asides: a margin note on a wide screen, a "more" box on a phone.
+   In the page an aside comes before its paragraph, so it can float beside
+   it; a narrow screen shows the paragraph first. */
+.with-aside {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+.with-aside > p,
+.with-aside > .prose {
+  order: -1;
+}
+.with-aside > p:last-child,
+.with-aside > .prose:last-child {
+  margin-bottom: 0;
+}
+.aside {
+  margin: 0 0 1em;
+  padding: 0.6em 0.9em;
+  border-left: 2px solid var(--palette-border);
+  background: var(--palette-panel);
+  font-size: 0.8em;
+  line-height: 1.5;
+}
+.with-aside > .aside {
+  margin: 0.4em 0 0;
+}
+.aside-title {
+  margin: 0 0 0.2em;
+  font-weight: 600;
+}
+.aside p {
+  margin: 0 0 0.5em;
+}
+.aside p:last-child {
+  margin: 0;
+}
+.aside-label {
+  color: var(--palette-muted);
+  font-weight: 400;
+}
+@media (min-width: 1280px) {
+  .with-aside {
+    display: block;
+    margin-bottom: 0;
+  }
+  .with-aside > .aside {
+    float: right;
+    clear: right;
+    width: 250px;
+    margin: 0.3em -290px 1em 0;
+    padding: 0 0 0 0.9em;
+    background: none;
+  }
+  .aside-label {
+    display: none;
+  }
+  .with-aside > p:last-child {
+    margin-bottom: 1em;
+  }
+}
+
+/* Lists in the prose (a figure's steps) */
+.steps {
+  margin: 0 0 1em;
+  padding-left: 1.4em;
+}
+.steps li {
+  margin: 0 0 0.5em;
+}
+
+/* A pull quote: large, across the figure width */
+.pull-quote {
+  width: min(var(--figure-max), 100vw - 2 * var(--gutter));
+  margin: 1.6em 0 1.6em calc((100% - min(var(--figure-max), 100vw - 2 * var(--gutter))) / 2);
+  font-family: var(--font-serif);
+  font-size: 1.6em;
+  line-height: 1.25;
+  text-align: center;
+}
+
+/* ---------- Figures ---------- */
+.fig {
+  position: relative;
+  width: min(var(--figure-max), 100vw - 2 * var(--gutter));
+  margin: 1.6em 0 1.8em calc((100% - min(var(--figure-max), 100vw - 2 * var(--gutter))) / 2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fig-art {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.fig svg.art {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  overflow: visible;
+}
+/* the phone layout of a figure that has one */
+.fig .art-narrow {
+  display: none;
+}
+@media (max-width: 600px) {
+  .fig.has-narrow .art-wide {
+    display: none;
+  }
+  .fig.has-narrow .art-narrow {
+    display: block;
+  }
+}
+.fig-caption {
+  max-width: 34em;
+  margin: 0.6em auto 0;
+  min-height: 1.6em;
+  text-align: center;
+  font-size: 0.85em;
+  color: var(--palette-muted);
+}
+.fig-caption.is-live {
+  color: var(--palette-ink);
+}
+.fig-controls {
+  align-self: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em 1em;
+  margin-top: 0.6em;
+  font-size: 0.85em;
+  color: var(--palette-muted);
+}
+.btn {
+  min-width: 2.2em;
+  min-height: 2em;
+  padding: 0.15em 0.8em;
+  border: 1px solid var(--palette-border);
+  border-radius: 999px;
+  background: var(--palette-panel);
+  color: var(--palette-ink);
+  font: inherit;
+  cursor: pointer;
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+/* the figure's one thing: marked in the accent, as a slider's thumb is */
+.btn-action {
+  padding: 0.3em 1.1em;
+  border: 2px solid var(--palette-accent);
+  font-size: 1.1em;
+}
+/* a button whose word changes keeps one width */
+.btn-swap {
+  display: inline-grid;
+}
+.btn-swap > span {
+  grid-area: 1 / 1;
+}
+.word-hidden {
+  visibility: hidden;
+}
+.counter {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--palette-ink);
+}
+.slider {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  flex: 1 1 100%;
+  max-width: 36em;
+  font-size: 1.1em;
+  color: var(--palette-ink);
+}
+.slider-label {
+  text-align: center;
+}
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  font-size: 0.8em;
+  color: var(--palette-muted);
+}
+.slider input[type="range"] {
+  flex: 1;
+  accent-color: var(--palette-accent);
+  height: 2em;
+}
+.fig-credit {
+  margin: -1.2em 0 1.6em;
+  font-size: 0.75em;
+  line-height: 1.4;
+  text-align: center;
+  color: var(--palette-muted);
+}
+
+/* ---------- Marks inside the drawings ----------
+   Color by job, through the page's palette. The fallback hex is the Ledger
+   value, so a drawing copied out of the page still paints. */
+svg.art * {
+  vector-effect: non-scaling-stroke;
+}
+svg.art {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+/* line colors */
+.l-subject { stroke: var(--palette-subject, #143c6b); fill: none; }
+.l-muted { stroke: var(--palette-muted, #736a60); fill: none; }
+.l-ink { stroke: var(--palette-ink, #2a2520); fill: none; }
+.l-second { stroke: var(--palette-second, #b5601e); fill: none; }
+.l-water { stroke: var(--palette-water, #30527b); fill: none; }
+.l-flow { stroke: var(--palette-flow, #143c6b); fill: none; }
+/* faces */
+.f-subject { fill: var(--palette-subject-wash, #d3dce3); }
+.f-muted { fill: var(--palette-muted-wash, #e2ded6); }
+.f-second { fill: var(--palette-second-wash, #ecd8c4); }
+.f-water { fill: var(--palette-water-wash, #7087a0); }
+.f-ground { fill: var(--palette-ground-wash, #e2ded6); }
+.f-paper { fill: var(--palette-paper, #faf7f0); }
+/* solid line-colored fills (a dot, an arrowhead) */
+.d-subject { fill: var(--palette-subject, #143c6b); stroke: none; }
+.d-flow { fill: var(--palette-flow, #143c6b); stroke: none; }
+.d-ink { fill: var(--palette-ink, #2a2520); stroke: none; }
+.d-second { fill: var(--palette-second, #b5601e); stroke: none; }
+/* the stroke ladder, in displayed pixels */
+.w2 { stroke-width: 2px; }
+.w25 { stroke-width: 2.5px; }
+.w3 { stroke-width: 3px; }
+.w4 { stroke-width: 4px; }
+/* opacities a moving line may take (0.60–1.0), and fine detail's */
+.o50 { opacity: 0.5; }
+.o60 { opacity: 0.6; }
+.o70 { opacity: 0.7; }
+.o85 { opacity: 0.85; }
+.dash { stroke-dasharray: 4 4; }
+/* label text: ink, Plex Sans, sentence case */
+svg.art text {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  fill: var(--palette-ink, #2a2520);
+  stroke: none;
+}
+svg.art text.t-small { font-size: 15px; }
+svg.art text.t-muted { fill: var(--palette-muted, #736a60); }
+svg.art text.t-second { fill: var(--palette-second, #b5601e); }
+svg.art text.t-mono { font-family: var(--font-mono); font-weight: 600; }
+svg.art text.t-big { font-family: var(--font-serif); font-weight: 600; font-size: 26px; }
+/* the flash: "look at this part" (0.25 s on, 0.25 s off, five times) */
+.is-flash .l-subject,
+.is-flash.l-subject,
+.is-flash .l-muted,
+.is-flash.l-muted { stroke: var(--palette-second, #b5601e); }
+.is-flash .f-subject,
+.is-flash.f-subject,
+.is-flash .f-muted,
+.is-flash.f-muted { fill: var(--palette-second-wash, #ecd8c4); }
+/* a marked part (part of a part, held in orange while it matters) */
+.is-marked .l-subject,
+.is-marked.l-subject { stroke: var(--palette-second, #b5601e); }
+.is-marked .f-subject,
+.is-marked.f-subject { fill: var(--palette-second-wash, #ecd8c4); }
+.hidden { display: none; }
+
+/* ---------- The foot ---------- */
+.next {
+  margin: 3em 0 0;
+  font-size: 1.1em;
+}
+.parts {
+  margin: 1.2em 0 0;
+  font-size: 0.85em;
+}
+.parts ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2em 1.1em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.parts [aria-current="page"] {
+  font-weight: 600;
+}
+.colophon {
+  margin: 3em 0 0;
+  padding-top: 1em;
+  border-top: 1px solid var(--palette-border);
+  font-size: 0.75em;
+  line-height: 1.5;
+  color: var(--palette-muted);
+}
+.colophon a {
+  color: var(--palette-muted);
+}
+.colophon h2 {
+  margin: 1.2em 0 0.3em;
+  font-size: 1em;
+  font-weight: 600;
+}
+.colophon h2:first-child {
+  margin-top: 0;
+}
+.colophon ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+.colophon li {
+  margin: 0 0 0.25em;
+}
