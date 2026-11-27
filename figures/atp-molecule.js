@@ -198,8 +198,7 @@ export function mount(fig) {
   spendBtn.addEventListener("click", () => {
     if (state.adp || figure.t < state.until) return;
     // the burst is a flash: never at the same time as the bead's flash
-    figure.flashes = [];
-    for (const b of parts.beads) b.classList.remove("is-flash");
+    figure.cancelFlash();
     state.adp = true;
     state.spendAt = figure.act(SPEND);
     state.until = state.spendAt + SPEND;

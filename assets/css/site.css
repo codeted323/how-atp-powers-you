@@ -648,3 +648,14 @@ svg.art text.t-big { font-family: var(--font-serif); font-weight: 600; font-size
 .colophon li {
   margin: 0 0 0.25em;
 }
+
+/* a figure cropped for a phone: its labels drawn larger so they still read
+   at about 15–16 px once the crop is scaled to the screen */
+svg.art.zoom text {
+  font-size: 22px;
+}
+@media (max-width: 600px) {
+  .fig-counter {
+    font-size: 0.75em;
+  }
+}

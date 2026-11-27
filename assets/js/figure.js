@@ -19,6 +19,7 @@ export const reducedMotion =
   matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const page = { paused: reducedMotion, figures: new Set() };
+const now = () => performance.now() / 1000;
 export const FLASH_ON = 0.25;
 export const FLASH_COUNT = 5;
 export const FLASH_LENGTH = FLASH_ON * 2 * FLASH_COUNT; // 2.5 s
@@ -100,15 +101,21 @@ export class Figure {
     if (this.flashing) return false;
     if (this.paused && !byReader) return false;
     const list = Array.isArray(nodes) ? nodes : [nodes];
-    this.flashes.push({ nodes: list, start: this.t });
-    // a flash is part of the figure's time: let it finish even if paused
-    this.busyUntil = Math.max(this.busyUntil, this.t + FLASH_LENGTH);
+    // a flash keeps its own clock (wall time), so it never moves the
+    // figure's time; it runs only while the figure is on screen
+    this.flashes.push({ nodes: list, start: now() });
     this.dirty = true;
     return true;
   }
 
+  /** Ends any flash at once (before a burst, which counts as one). */
+  cancelFlash() {
+    for (const f of this.flashes) for (const n of f.nodes) n.classList.remove("is-flash");
+    this.flashes = [];
+  }
+
   get flashing() {
-    return this.flashes.some((f) => this.t - f.start < FLASH_LENGTH);
+    return this.flashes.some((f) => now() - f.start < FLASH_LENGTH);
   }
 
   syncButtons() {
@@ -131,17 +138,18 @@ export class Figure {
       this.t = next;
     }
     if (run || this.dirty) {
-      this.paintFlashes(run);
       this.drawFn(this.t, this);
       this.dirty = false;
     }
+    if (this.flashes.length) this.paintFlashes();
   }
 
-  paintFlashes(run) {
+  paintFlashes() {
+    const visible = this.visible && !document.hidden;
     this.flashes = this.flashes.filter((f) => {
-      const age = this.t - f.start;
+      const age = now() - f.start;
       const done = age >= FLASH_LENGTH;
-      const on = !done && run && Math.floor(age / FLASH_ON) % 2 === 0;
+      const on = !done && visible && Math.floor(age / FLASH_ON) % 2 === 0;
       for (const n of f.nodes) n.classList.toggle("is-flash", on);
       return !done;
     });

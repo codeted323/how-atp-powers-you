@@ -141,9 +141,12 @@
 
   <p>ATP doesn't push the head itself. Instead, each stage of ATP's breakdown switches the head to a new shape. Press <b>Step</b> under the next picture to walk one head through its cycle.</p>
 
-  <figure class="fig fig-pending" id="myosin-row" data-figure="3.1">
-  <div class="fig-art"><svg class="art" width="980" height="160" viewBox="0 0 980 160" role="img" aria-labelledby="myosin-row-alt"><text x="490" y="84" text-anchor="middle" class="t-small t-muted">Figure 3.1 is being drawn</text></svg></div>
+  <figure class="fig" id="myosin-row" data-figure="3.1">
+  <div class="fig-art"><svg class="art" width="980" height="420" viewBox="0 0 980 420" role="img" aria-labelledby="myosin-row-alt"></svg></div>
   <p class="sr-only" id="myosin-row-alt">A myosin head under a strand of actin. An ATP enters its pocket and the head lifts off; the head tilts back and splits the ATP; it grips the actin farther along; then it swings as it lets the phosphate go, pulling the strand to one side.</p>
+  <p class="fig-caption is-live" id="myosin-row-caption" aria-live="polite"></p>
+  <noscript><p class="fig-caption">This figure needs JavaScript. It shows: A myosin head under a strand of actin. An ATP enters its pocket and the head lifts off; the head tilts back and splits the ATP; it grips the actin farther along; then it swings as it lets the phosphate go, pulling the strand to one side.</p></noscript>
+  <div class="fig-controls"><button type="button" class="btn btn-swap" data-pause aria-pressed="false" aria-label="Pause this figure"><span>Play</span><span>Pause</span></button><button type="button" class="btn btn-action" id="myosin-row-step">Step</button></div>
 </figure>
 
   <ol class="steps">
@@ -165,9 +168,13 @@
 
   <p>The same trick moves cargo inside your cells. <em>Kinesin</em> is a motor with two feet that walks along thin tracks called microtubules, hauling packages from one part of a cell to another. In 1997 Mark Schnitzer and Steven Block, at Princeton, showed that kinesin uses one ATP for every 8-nanometer step. That is about a ten-thousandth of the width of a human hair.</p>
 
-  <figure class="fig fig-pending" id="kinesin-walk" data-figure="3.2">
-  <div class="fig-art"><svg class="art" width="980" height="160" viewBox="0 0 980 160" role="img" aria-labelledby="kinesin-walk-alt"><text x="490" y="84" text-anchor="middle" class="t-small t-muted">Figure 3.2 is being drawn</text></svg></div>
+  <figure class="fig" id="kinesin-walk" data-figure="3.2">
+  <div class="fig-art"><svg class="art" width="980" height="300" viewBox="0 0 980 300" role="img" aria-labelledby="kinesin-walk-alt"></svg></div>
   <p class="sr-only" id="kinesin-walk-alt">A two-footed motor walking along a striped track, towing a round package. Each time a back foot swings to the front, one ATP is used and its foot lands two stripes ahead, while the motor&#x27;s body moves one stripe, 8 nanometers. A counter keeps the tally.</p>
+  <p class="fig-counter counter" id="kinesin-walk-counter" aria-live="off"></p>
+  <p class="sr-only" id="kinesin-walk-status" aria-live="polite"></p>
+  <noscript><p class="fig-caption">This figure needs JavaScript. It shows: A two-footed motor walking along a striped track, towing a round package. Each time a back foot swings to the front, one ATP is used and its foot lands two stripes ahead, while the motor&#x27;s body moves one stripe, 8 nanometers. A counter keeps the tally.</p></noscript>
+  <div class="fig-controls"><button type="button" class="btn btn-swap" data-pause aria-pressed="false" aria-label="Pause this figure"><span>Play</span><span>Pause</span></button></div>
 </figure>
 
   <div class="with-aside">
@@ -502,6 +509,10 @@ import { mount as atpMolecule } from "./figures/atp-molecule.js";
 atpMolecule(document.getElementById("atp-molecule"));
 import { mount as atpHill } from "./figures/atp-hill.js";
 atpHill(document.getElementById("atp-hill"));
+import { mount as myosinRow } from "./figures/myosin-row.js";
+myosinRow(document.getElementById("myosin-row"));
+import { mount as kinesinWalk } from "./figures/kinesin-walk.js";
+kinesinWalk(document.getElementById("kinesin-walk"));
 
 initPage();
 </script>
