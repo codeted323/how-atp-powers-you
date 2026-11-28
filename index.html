@@ -99,9 +99,12 @@
 
   <p>Here is ATP drawn atom by atom, in a shape it really takes. The hydrogen atoms are left out so the rest can be seen. Drag <b>Turn</b> under the next picture, or press <b>Edge on</b>, and look at the rings from the side.</p>
 
-  <figure class="fig fig-pending" id="atp-atoms" data-figure="2.1">
-  <div class="fig-art"><svg class="art" width="900" height="160" viewBox="0 0 900 160" role="img" aria-labelledby="atp-atoms-alt"><text x="450" y="84" text-anchor="middle" class="t-small t-muted">Figure 2.1 is being drawn</text></svg></div>
+  <figure class="fig" id="atp-atoms" data-figure="2.1">
+  <div class="fig-art"><svg class="art" width="900" height="420" viewBox="0 0 900 420" role="img" aria-labelledby="atp-atoms-alt"></svg></div>
   <p class="sr-only" id="atp-atoms-alt">ATP drawn atom by atom, without its hydrogens: a double ring, a five-sided sugar ring, and a tail of three phosphorus atoms, each wrapped in four oxygens, with four negative charges along the tail. As the molecule turns, the double ring seen edge-on becomes a single straight line of atoms, while the sugar shows one bent corner and the phosphates spread out in three dimensions.</p>
+  <p class="fig-caption is-live" id="atp-atoms-caption" aria-live="polite"></p>
+  <noscript><p class="fig-caption">This figure needs JavaScript. It shows: ATP drawn atom by atom, without its hydrogens: a double ring, a five-sided sugar ring, and a tail of three phosphorus atoms, each wrapped in four oxygens, with four negative charges along the tail. As the molecule turns, the double ring seen edge-on becomes a single straight line of atoms, while the sugar shows one bent corner and the phosphates spread out in three dimensions.</p></noscript>
+  <div class="fig-controls"><div class="slider"><label class="slider-label" for="atp-atoms-turn">Turn</label><div class="slider-row"><span aria-hidden="true">Face on</span><input type="range" id="atp-atoms-turn" min="0" max="100" step="1" value="0" aria-valuetext="0 degrees: face on"><span aria-hidden="true">Full turn</span></div></div><button type="button" class="btn btn-action" id="atp-atoms-edge">Edge on</button><button type="button" class="btn btn-swap" data-pause aria-pressed="false" aria-label="Pause this figure"><span>Play</span><span>Pause</span></button></div>
 </figure>
 
   <div class="with-aside">
@@ -623,6 +626,8 @@
 import { initPage, lazy } from "./assets/js/figure.js";
 import { mount as atpMolecule } from "./figures/atp-molecule.js";
 atpMolecule(document.getElementById("atp-molecule"));
+import { mount as atpAtoms } from "./figures/atp-atoms.js";
+atpAtoms(document.getElementById("atp-atoms"));
 import { mount as atpHill } from "./figures/atp-hill.js";
 atpHill(document.getElementById("atp-hill"));
 import { mount as myosinRow } from "./figures/myosin-row.js";

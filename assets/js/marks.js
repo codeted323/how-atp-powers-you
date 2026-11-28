@@ -16,6 +16,11 @@
 // 3. ATP: three phosphate beads (subject) on ribose (a five-sided ring)
 //    and adenine (a double ring), both context. The compact form is the
 //    sugar and three small beads, for figures where ATP is a passenger.
+// 4. THE ATOM: for figures drawn atom by atom. A circle marked with its
+//    element's letter (C, N, O, P, H), in its part's job: subject, muted
+//    (context) or water (a paper face with a water-colored line). Sizes
+//    keep the real order (P > C, N, O > H) without claiming true radii;
+//    bonds are lines between centers, drawn under the atoms.
 
 export const NS = "http://www.w3.org/2000/svg";
 
@@ -278,4 +283,29 @@ export function atpCompact(parent, x, y, n = 3, o = {}) {
     beads.push(bg);
   }
   return { g, beads };
+}
+
+// ---------- 4. the atom ----------
+
+const ATOM_SCALE = { P: 1.25, H: 0.62 };
+
+/** An atom about (0, 0); `place(x, y)` moves it. `r` is a C/N/O atom's
+ *  radius; o.role: "subject" | "muted" (default) | "water". */
+export function atom(parent, sym, r, o = {}) {
+  const role = o.role || "muted";
+  const face = role === "water" ? "f-paper" : `f-${role}`;
+  const g = el("g", { class: `mark mark-atom atom-${sym}` }, parent);
+  if (o.id) g.setAttribute("id", o.id);
+  const rr = r * (ATOM_SCALE[sym] || 1);
+  const c = el("circle", { cx: 0, cy: 0, r: rr.toFixed(2), class: `${face} l-${role} w25` }, g);
+  const t = el("text", { x: 0, y: 0, "text-anchor": "middle", "dominant-baseline": "central", class: "t-small atom-letter" }, g);
+  t.textContent = sym;
+  return {
+    g,
+    c,
+    r: rr,
+    place(x, y) {
+      g.setAttribute("transform", `translate(${x.toFixed(2)} ${y.toFixed(2)})`);
+    },
+  };
 }

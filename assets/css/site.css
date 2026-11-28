@@ -673,3 +673,18 @@ svg.art.zoom-s text {
   inset: 0;
   pointer-events: none;
 }
+
+/* the atom mark's letter: sized to sit inside its circle */
+svg.art text.atom-letter {
+  font-size: 14px;
+  font-weight: 600;
+}
+svg.art .atom-H text.atom-letter {
+  font-size: 11px;
+}
+svg.art.zoom text.atom-letter {
+  font-size: 18px;
+}
+svg.art.zoom .atom-H text.atom-letter {
+  font-size: 14px;
+}
