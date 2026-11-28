@@ -247,9 +247,13 @@
     <p>How much is one ATP worth, in the motor's own world? Forces there are measured in <em>piconewtons</em>, trillionths of a newton, and distances in nanometers. A force times the distance it pushes is energy, so a piconewton-nanometer is a unit of energy, a tiny one. Splitting one ATP inside a cell releases about 80 to 110 of them. Kinesin, pulling as hard as it can, about 6 to 7 piconewtons over each 8-nanometer step, does up to about 56: more than half of what each ATP provides. A typical random kick from heat carries about 4. Press <b>Stack</b> under the next picture to see how many kicks one ATP is worth.</p>
   </div>
 
-  <figure class="fig fig-pending" id="energy-scale" data-figure="3.4">
-  <div class="fig-art"><svg class="art" width="900" height="160" viewBox="0 0 900 160" role="img" aria-labelledby="energy-scale-alt"><text x="450" y="84" text-anchor="middle" class="t-small t-muted">Figure 3.4 is being drawn</text></svg></div>
+  <figure class="fig" id="energy-scale" data-figure="3.4">
+  <div class="fig-art"><svg class="art" width="900" height="340" viewBox="0 0 900 340" role="img" aria-labelledby="energy-scale-alt"></svg></div>
   <p class="sr-only" id="energy-scale-alt">Three bars on one scale of energy per molecule. A random heat kick is a sliver, about 4 piconewton-nanometers. Kinesin&#x27;s hardest step is about 56. One ATP spent in a cell is 80 to 110. Laid end to end, about 20 to 25 heat kicks match one ATP.</p>
+  <p class="fig-counter counter" id="energy-scale-counter" aria-live="off"></p>
+  <p class="sr-only" id="energy-scale-status" aria-live="polite"></p>
+  <noscript><p class="fig-caption">This figure needs JavaScript. It shows: Three bars on one scale of energy per molecule. A random heat kick is a sliver, about 4 piconewton-nanometers. Kinesin&#x27;s hardest step is about 56. One ATP spent in a cell is 80 to 110. Laid end to end, about 20 to 25 heat kicks match one ATP.</p></noscript>
+  <div class="fig-controls"><button type="button" class="btn btn-action" id="energy-scale-stack">Stack</button><button type="button" class="btn" id="energy-scale-reset">Reset</button></div>
 </figure>
 
   <p>One ATP is worth about 20 to 25 heat kicks. That margin is what lets a motor step forward against the constant jostling, instead of being shaken back and forth.</p>
@@ -638,6 +642,8 @@ import { mount as atpSplit } from "./figures/atp-split.js";
 atpSplit(document.getElementById("atp-split"));
 import { mount as myosinPocket } from "./figures/myosin-pocket.js";
 myosinPocket(document.getElementById("myosin-pocket"));
+import { mount as energyScale } from "./figures/energy-scale.js";
+energyScale(document.getElementById("energy-scale"));
 import { mount as atpHill } from "./figures/atp-hill.js";
 atpHill(document.getElementById("atp-hill"));
 import { mount as myosinRow } from "./figures/myosin-row.js";
