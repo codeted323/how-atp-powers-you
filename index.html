@@ -115,9 +115,12 @@
     <p>Now watch the swap itself. The next picture shows only the end of the tail. Press <b>Step</b> to go one stage at a time.</p>
   </div>
 
-  <figure class="fig fig-pending" id="atp-split" data-figure="2.2">
-  <div class="fig-art"><svg class="art" width="900" height="160" viewBox="0 0 900 160" role="img" aria-labelledby="atp-split-alt"><text x="450" y="84" text-anchor="middle" class="t-small t-muted">Figure 2.2 is being drawn</text></svg></div>
+  <figure class="fig" id="atp-split" data-figure="2.2">
+  <div class="fig-art"><svg class="art" width="900" height="380" viewBox="0 0 900 380" role="img" aria-labelledby="atp-split-alt"></svg></div>
   <p class="sr-only" id="atp-split-alt">The end of ATP&#x27;s tail: two phosphorus atoms, each wrapped in oxygens, with negative charges crowded side by side. A water molecule&#x27;s oxygen bonds to the end phosphorus, the bond to its neighbor breaks, and a hydrogen ion leaves. Then the two pieces push apart, and nearby water molecules turn their hydrogen ends toward the negative pieces.</p>
+  <p class="fig-caption is-live" id="atp-split-caption" aria-live="polite"></p>
+  <noscript><p class="fig-caption">This figure needs JavaScript. It shows: The end of ATP&#x27;s tail: two phosphorus atoms, each wrapped in oxygens, with negative charges crowded side by side. A water molecule&#x27;s oxygen bonds to the end phosphorus, the bond to its neighbor breaks, and a hydrogen ion leaves. Then the two pieces push apart, and nearby water molecules turn their hydrogen ends toward the negative pieces.</p></noscript>
+  <div class="fig-controls"><button type="button" class="btn btn-swap" data-pause aria-pressed="false" aria-label="Pause this figure"><span>Play</span><span>Pause</span></button><button type="button" class="btn btn-action" id="atp-split-step">Step</button></div>
 </figure>
 
   <p>In a test tube, that is the end of the story. The pieces drift apart, and the energy they give up goes into the water around them: every molecule nearby ends up moving a little faster, in a random direction. That random motion is heat. A random shove pushes nothing anywhere in particular, so no machine can run on it. Part 3 shows how cells collect the energy instead.</p>
@@ -628,6 +631,8 @@ import { mount as atpMolecule } from "./figures/atp-molecule.js";
 atpMolecule(document.getElementById("atp-molecule"));
 import { mount as atpAtoms } from "./figures/atp-atoms.js";
 atpAtoms(document.getElementById("atp-atoms"));
+import { mount as atpSplit } from "./figures/atp-split.js";
+atpSplit(document.getElementById("atp-split"));
 import { mount as atpHill } from "./figures/atp-hill.js";
 atpHill(document.getElementById("atp-hill"));
 import { mount as myosinRow } from "./figures/myosin-row.js";
