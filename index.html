@@ -304,9 +304,12 @@
 
   <p>Why does the detour help? Without the phosphate, the nitrogen would have to push off a bare oxygen, which clings to its carbon too tightly. With the phosphate attached, the oxygen leaves as part of a loose phosphate, which spreads its charge over its oxygens and settles easily into water. Added up, the two steps run downhill, by about 16 kilojoules per mole. Press <b>Step</b> under the next picture.</p>
 
-  <figure class="fig fig-pending" id="phosphate-handoff" data-figure="4.3">
-  <div class="fig-art"><svg class="art" width="980" height="160" viewBox="0 0 980 160" role="img" aria-labelledby="phosphate-handoff-alt"><text x="490" y="84" text-anchor="middle" class="t-small t-muted">Figure 4.3 is being drawn</text></svg></div>
+  <figure class="fig" id="phosphate-handoff" data-figure="4.3">
+  <div class="fig-art"><svg class="art" width="980" height="420" viewBox="0 0 980 420" role="img" aria-labelledby="phosphate-handoff-alt"></svg></div>
   <p class="sr-only" id="phosphate-handoff-alt">Atoms drawn as labeled circles. A negatively charged oxygen on glutamate bonds to the end phosphorus of ATP, taking the phosphate and sending ADP away. Ammonia&#x27;s nitrogen then bonds to the carbon next to it. The phosphate leaves, carrying that oxygen away, and the nitrogen is left where the oxygen was, making glutamine.</p>
+  <p class="fig-caption is-live" id="phosphate-handoff-caption" aria-live="polite"></p>
+  <noscript><p class="fig-caption">This figure needs JavaScript. It shows: Atoms drawn as labeled circles. A negatively charged oxygen on glutamate bonds to the end phosphorus of ATP, taking the phosphate and sending ADP away. Ammonia&#x27;s nitrogen then bonds to the carbon next to it. The phosphate leaves, carrying that oxygen away, and the nitrogen is left where the oxygen was, making glutamine.</p></noscript>
+  <div class="fig-controls"><button type="button" class="btn btn-swap" data-pause aria-pressed="false" aria-label="Pause this figure"><span>Play</span><span>Pause</span></button><button type="button" class="btn btn-action" id="phosphate-handoff-step">Step</button></div>
 </figure>
 
   <div class="with-aside">
@@ -644,6 +647,8 @@ import { mount as myosinPocket } from "./figures/myosin-pocket.js";
 myosinPocket(document.getElementById("myosin-pocket"));
 import { mount as energyScale } from "./figures/energy-scale.js";
 energyScale(document.getElementById("energy-scale"));
+import { mount as phosphateHandoff } from "./figures/phosphate-handoff.js";
+phosphateHandoff(document.getElementById("phosphate-handoff"));
 import { mount as atpHill } from "./figures/atp-hill.js";
 atpHill(document.getElementById("atp-hill"));
 import { mount as myosinRow } from "./figures/myosin-row.js";
