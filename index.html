@@ -204,9 +204,12 @@
 
   <p>Both moments are electric. ATP's tail carries about four negative charges, and a magnesium ion with two positive charges rides along with it. The pocket is lined with positively charged and partly charged parts of the protein. When the tail lands, those parts are pulled in toward it, and two flexible loops close around the end phosphate. That pull bends the protein. The bend travels a few nanometers across the head, to a cleft that grips actin, and pries the cleft open. Press <b>Load ATP</b> under the next picture.</p>
 
-  <figure class="fig fig-pending" id="myosin-pocket" data-figure="3.2">
-  <div class="fig-art"><svg class="art" width="900" height="160" viewBox="0 0 900 160" role="img" aria-labelledby="myosin-pocket-alt"><text x="450" y="84" text-anchor="middle" class="t-small t-muted">Figure 3.2 is being drawn</text></svg></div>
+  <figure class="fig" id="myosin-pocket" data-figure="3.2">
+  <div class="fig-art"><svg class="art" width="900" height="440" viewBox="0 0 900 440" role="img" aria-labelledby="myosin-pocket-alt"></svg></div>
   <p class="sr-only" id="myosin-pocket-alt">A schematic myosin head under a strand of actin. When ATP&#x27;s negatively charged tail drops into a pocket near the bottom of the head, charged parts of the pocket and two loops are pulled in around it. The bend travels up through the head, a cleft at the top opens, and the head lets go of the actin.</p>
+  <p class="sr-only" id="myosin-pocket-status" aria-live="polite"></p>
+  <noscript><p class="fig-caption">This figure needs JavaScript. It shows: A schematic myosin head under a strand of actin. When ATP&#x27;s negatively charged tail drops into a pocket near the bottom of the head, charged parts of the pocket and two loops are pulled in around it. The bend travels up through the head, a cleft at the top opens, and the head lets go of the actin.</p></noscript>
+  <div class="fig-controls"><button type="button" class="btn btn-action btn-swap" id="myosin-pocket-load"><span>Load ATP</span><span class="word-hidden">Empty</span></button></div>
 </figure>
 
   <div class="with-aside">
@@ -633,6 +636,8 @@ import { mount as atpAtoms } from "./figures/atp-atoms.js";
 atpAtoms(document.getElementById("atp-atoms"));
 import { mount as atpSplit } from "./figures/atp-split.js";
 atpSplit(document.getElementById("atp-split"));
+import { mount as myosinPocket } from "./figures/myosin-pocket.js";
+myosinPocket(document.getElementById("myosin-pocket"));
 import { mount as atpHill } from "./figures/atp-hill.js";
 atpHill(document.getElementById("atp-hill"));
 import { mount as myosinRow } from "./figures/myosin-row.js";
